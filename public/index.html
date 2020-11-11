@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <!-- afsnit.html -->
 <html>
-  <head>
+
+<head>
     <title>plantehotel</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="index.js" defer></script>
-  </head>
-    <h1>Booking af hotelplands  </h1>
-  <body>
+    <script src="plantehotelClient.js" defer></script>
+</head>
+<h1>Booking af hotelplands </h1>
+
+<body>
     <p>
         Indsæt tekst her
     </p>
 
     <div id="name-div">
         <label id="name-label">Fornavn</label>
-        <input id= "name-input" ></input>
+        <input id="name-input"></input>
         <label id="lastname-label">Efternavn</label>
-        <input id= "lastname-input" ></input>
+        <input id="lastname-input"></input>
     </div>
 
     <label id="address-label">Ardesse:</label>
 
-        <div id="addressDiv">      
+    <div id="addressDiv">
 
-            <label>Post nummer</label>
-        <input id="zip-code-input" ></input>
+        <label>Post nummer</label>
+        <input id="zip-code-input"></input>
 
-        <label id="city-label" >By</label>
-        <input id="city-input" ></input>
+        <label id="city-label">By</label>
+        <input id="city-input"></input>
 
         <label id="address-label">Vej og hus nummer</label>
-        <input id="address-input" ></input>
+        <input id="address-input"></input>
     </div>
-            
-        <div id="mobile-number-div">
-            <label>Mobil nummer</label>
-            <input id="number-input" type="number"></input>
-        </div>
-        <div id="email-div">
-            <label id="email-label">email</label>
-            <input id="email-input" type="text"></input>
-        </div>
-        <div id="number-of-plants-div">
-            <label id="" >Angiv planter til indlogering</label>
-            <table>
-                <tr>
-                    <td>Plantenavn</td>
-                    <td>Antal</td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" id="plantName" ></input>
-                    </td>
-                    <td>
-                        <input type="number" id="numberOfPlants" ></input>
-                    </td>
-                    <td>
-                        <button type="button" id="addPlantBtn">Tilføj</button>
-                    </td>
-                </tr>
-            </table>
-            <select id="planter" size="4"></select>
-        </div>
-        <div id="date-div">
-            <label id="data-label">Ønskede dato for indlevering</label>
-            <input type="date" id="birthday"></input>
 
-        </div>
-        <button id="send-button">Send rasevation</button>
+    <div id="mobile-number-div">
+        <label>Mobil nummer</label>
+        <input id="number-input" type="number"></input>
+    </div>
+    <div id="email-div">
+        <label id="email-label">email</label>
+        <input id="email-input" type="text"></input>
+    </div>
+    <div id="number-of-plants-div">
+        <label id="">Angiv planter til indlogering</label>
+        <table>
+            <tr>
+                <td>Plantenavn</td>
+                <td>Antal</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="plantName"></input>
+                </td>
+                <td>
+                    <input type="number" id="numberOfPlants"></input>
+                </td>
+                <td>
+                    <button type="button" id="addPlantBtn">Tilføj</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="plantListLabel" for="planter">Planter</label>
+                </td>
+            </tr>
+        </table>
+        <select id="planter" size="4"></select>
+    </div>
+    <div id="date-div">
+        <label id="data-label">Ønsket dato for indlevering</label>
+        <input type="date" id="birthday"></input>
 
-  </body>
+    </div>
+    <button id="send-button">Send resevation</button>
+
+</body>
+
 </html>
