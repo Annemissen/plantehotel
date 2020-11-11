@@ -52,3 +52,8 @@
 body{
     background-color: gray;
 }
+
+#sendButton{
+    margin-top: 4wv;
+    margin-left: 5vw;
+}
