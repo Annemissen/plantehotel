@@ -11,3 +11,9 @@ async function get(url) {
         throw new Error(respons.status);
     return await respons.json();
 }
+
+exports.createCustomer = function(){
+    
+    return //model.create({variables})
+
+}

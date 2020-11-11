@@ -1,5 +1,5 @@
 const config = {
-    databaseURI: 'mongodb://localhost/', // or MongoDB Atlas connection URI
+    databaseURI: 'mongodb://localhost' + '/testPlanteHotelDB', // or MongoDB Atlas connection URI
     localPort: 8080
 };
 
