@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const model
+const models = require('../models/models')
 
 const config = require('../config');
 const customer = require('../models/models.js')
@@ -7,9 +7,7 @@ const customer = require('../models/models.js')
 
 const uri ="mongodb +  srv://Grothen:p4ndek4gek0ngen@cluster0.abwhj.mongodb.net/PlantsDB?retryWrites=true&w=majority"
 
-//mongoose.connect(config.databaseURI, {useNewUrlParser: true, useUnifiedTopology: true});
-
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.databaseURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 async function get(url) {
@@ -35,6 +33,18 @@ exports.createCustomer = async function(body){
 
 
     
+<<<<<<< HEAD
     return res
+=======
+    return models.create({
+        firstname,
+        lastname,
+        address,
+        postalcode,
+        city,
+        plants,
+        pickup
+    })
+>>>>>>> main
 
 }
