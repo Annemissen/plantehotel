@@ -10,3 +10,5 @@ app.use('/api', require('./routes/planteHotel'));
 const port = process.env.PORT || config.localPort; // Heroku
 app.listen(port);
 console.log('Listening on port ' + port + ' ...');
+
+module.exports = app
