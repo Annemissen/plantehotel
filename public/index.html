@@ -3,7 +3,8 @@
 <html>
   <head>
     <title>plantehotel</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
   </head>
     <h1>Booking af hotelplands  </h1>
   <body>
@@ -12,16 +13,21 @@
     </p>
 
     <div id="Name-div">
-        <label id="name-label">fornavn og Efternavn</label>
+        <label id="name-label">Fornavn</label>
+        <input id= "NameInput" ></input>
+        <label id="Lastname-label">Efternavn</label>
         <input id= "NameInput" ></input>
     </div>
 
-    <label id="Addresslabel">Ardesse:</label>
+    <label id="Address-label">Ardesse:</label>
 
         <div id="AddressDiv">      
-           
+
             <label>Post nummer</label>
         <input id="Zip-code-input" ></input>
+
+        <label id="City-label" >By</label>
+        <input id="City-input" ></input>
 
         <label id="Address-label">Vej og hus nummer</label>
         <input id="Address-input" ></input>
@@ -43,8 +49,11 @@
             <label id="data-label">Ønskede dato for indlevering</label>
             <input type="date" id="birthday"></input>
     
-        </div>
+        
 
+
+        </div>
+        <button id="sendButton">Send rasevation</button>
 
   </body>
 </html>

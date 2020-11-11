@@ -1,0 +1,59 @@
+#AddressDiv{
+    margin-left: 5vw;
+    display: grid;
+    grid-template-columns: 1;
+}
+
+#email-div{
+    margin-left: 5vw;
+}
+#email-div > input{
+    margin-left: 5vw;
+}
+
+#number-input{
+    -webkit-appearance: none;
+    margin: 0;
+}
+#mobile-number-div{
+    margin-left: 5vw;
+}
+#mobile-number-div > input{
+    margin-left: 5vw;
+}
+#number-of-plants-div{
+    margin-left: 5vw;
+}
+#number-of-plants-div > input{
+    margin-left: 5vw;
+}
+
+#date-div {
+    margin-left: 5vw;
+}
+#date-div > input {
+    margin-left: 5vw;
+}
+#Name-div {
+    margin-left: 5vw;
+}
+#Name-div > input{
+    margin-left: 5vw;
+}
+
+
+#Addresslabel{
+    margin-left: 2vw;
+}
+#Addresslabel > input{
+    margin-left: 5vw;
+}
+
+body{
+    background-color: gray;
+}
+
+#sendButton{
+    margin-top: 4wv;
+    margin-left: 5vw;
+}
