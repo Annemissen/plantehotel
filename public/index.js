@@ -1,8 +1,5 @@
 
 const address_label = document.getElementById("address-label");
-console.log(address_label.innerText.length)
-
-
 
 const createCustomer = async () => {
     let firstname = document.getElementById("name-input").value;
@@ -25,8 +22,12 @@ const createCustomer = async () => {
             postalcode: postalcode,
             mobile: mobile,
             email: email,
+            plants: list,
+
+
+
         }),
     });
-    console.log(firstname + " " + lastname);
+
 }
 

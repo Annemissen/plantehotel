@@ -22,7 +22,7 @@ async function get(url) {
 }
 
 exports.createCustomer = async function (body) {
-    const { firstname, lastname, address, postalcode, city, mobile, email } = body;
+    const { firstname, lastname, address, postalcode, city, mobile, email, pickup, plants } = body;
 
     let res = await customers.information.create({
         firstname: firstname,
@@ -32,6 +32,8 @@ exports.createCustomer = async function (body) {
         postalcode: postalcode,
         mobile: mobile,
         email: email,
+        pickup: pickup,
+        plants: plants,
 
     });
     return res;
@@ -44,4 +46,4 @@ exports.createCustomer = async function (body) {
 //mobile: mobile,
 //email: email,
 //plants: [{ plantname: plantname, plantcount: plantcount }],
-//pickup: pickup,
+//
