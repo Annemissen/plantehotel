@@ -13,7 +13,11 @@
 
 <body>
     <p>
-        Indsæt tekst her
+        Indlevering fnder sted, efter at vi har modtaget en <br>
+        booking med jeres navn, adresse, mobil-nummer,<br>
+        e-mail og antal planter samt ønskelig dato for<br>
+        indlevering. Vi sender en bookingbekræftigelse i en<br>
+        mail med en indleveringsadresse.<br>
     </p>
 
     <div id="name-div">
@@ -33,21 +37,21 @@
         <label id="city-label">By</label>
         <input id="city-input"></input>
 
-        <label id="address-label">Vej og hus nummer</label>
+        <label id="address-label-street">Vej og hus nummer</label>
         <input id="address-input"></input>
     </div>
 
     <div id="mobile-number-div">
-        <label>Mobil nummer</label>
+        <label>Mobil nummer:</label>
         <input id="number-input" type="number"></input>
     </div>
     <div id="email-div">
-        <label id="email-label">email</label>
+        <label id="email-label">Email:</label>
         <input id="email-input" type="text"></input>
     </div>
     <div id="number-of-plants-div">
         <label id="">Angiv planter til indlogering</label>
-        <table>
+        <table id="planttable">
             <tr>
                 <td>Plantenavn</td>
                 <td>Antal</td>
@@ -69,13 +73,22 @@
                 </td>
             </tr>
         </table>
-        <select id="planter" size="4"></select>
+        <select id="plants" size="4"></select>
     </div>
     <div id="date-div">
         <label id="data-label">Ønsket dato for indlevering</label>
-        <input type="date" id="birthday"></input>
+        <input type="date" id="datepicker"></input>
+
+
+
 
     </div>
+
+    <p>Indlevering kan ske alle lørdage mellem kl. 10 <br>
+        og kl. 15 fra den 27 oktober og frem til om med<br>
+        den 17 november. Vi opbevarer ikke kaktus,<br>
+        sukkulenter, bougainvillea og enkelte andre<br>
+        planter som kræver høj minimum-temperatur</p>
     <button id="send-button">Send resevation</button>
 
 </body>
