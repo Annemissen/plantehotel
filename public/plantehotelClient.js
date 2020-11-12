@@ -38,17 +38,17 @@ async function getText(url) {
     return await respons.text();
 }
 
-function setDateRestrictions(){
-    let datePicker = document.getElementById("datepicker");
-    datePicker.min = "2020-10-31";
-    datePicker.max = "2020-11-28";
-}
+// function setDateRestrictions(){
+//     let datePicker = document.getElementById("datepicker");
+//     datePicker.min = "2020-10-31";
+//     datePicker.max = "2020-11-28";
+// }
 
 function main(){
     let addPlantBtn = document.getElementById("addPlantBtn");
     addPlantBtn.addEventListener("click", addPlant);
 
-    setDateRestrictions();
+    // setDateRestrictions();
 }
 
 main();
