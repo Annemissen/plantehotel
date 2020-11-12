@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const models = require('../models/models')
 
 const config = require('../config');
-const customer = require('../models/models.js')
+const customers = require('../models/models.js')
 
 
 const uri ="mongodb +  srv://Grothen:p4ndek4gek0ngen@cluster0.abwhj.mongodb.net/PlantsDB?retryWrites=true&w=majority"
@@ -18,33 +18,20 @@ async function get(url) {
 }
 
 exports.createCustomer = async function(body){
-    const {firstname,lastname,address,postalcode,city,plantname,plantcount,pickup} = body;
+    const {firstname,lastname,address,postalcode,city,plantname,plantcount,pickup,mobile,email} = body;
 
-    let res = await customer.information.create({
+    let res = await customers.information.create({
         firstname: firstname,
         lastname: lastname,
         address: address,
         postalcode : postalcode,
         city: city,
+        mobile: mobile,
+        email: email,
         plants:[{plantname: plantname, plantcount:plantcount}],
         pickup : pickup,
         
-    })
-
-
-    
-<<<<<<< HEAD
-    return res
-=======
-    return models.create({
-        firstname,
-        lastname,
-        address,
-        postalcode,
-        city,
-        plants,
-        pickup
-    })
->>>>>>> main
+    });
+    return res;
 
 }
