@@ -1,15 +1,6 @@
 const Address_label = document.getElementById("Address-label");
 
 
-
-
-
-
-
-
-
-
-
 const createCustomer = async () => {
     let firstname = document.getElementById("name-input").value;
     let lastname = document.getElementById("lastname-input").value;
