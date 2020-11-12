@@ -3,29 +3,46 @@
     display: grid;
     grid-template-columns: 1;
 }
+#addressDiv > input{
+    margin-left: 5vw;
+    background-color: #EDDCD2;
+}
+
 
 #email-div{
     margin-left: 5vw;
+    display: grid;
+    grid-template-columns: 1;
 }
 #email-div > input{
+ 
+    width: 20vw;
     margin-left: 5vw;
+    background-color: #EDDCD2;
 }
 
 #number-input{
     -webkit-appearance: none;
     margin: 0;
+    width: 20vw;
+    background-color: #EDDCD2;
 }
 #mobile-number-div{
     margin-left: 5vw;
+    display: grid;
+    grid-template-columns: 1;
 }
 #mobile-number-div > input{
     margin-left: 5vw;
+    background-color: #EDDCD2;
 }
 #number-of-plants-div{
     margin-left: 5vw;
+    
 }
 #number-of-plants-div > input{
     margin-left: 5vw;
+    background-color: #EDDCD2;
 }
 
 #date-div {
@@ -33,27 +50,83 @@
 }
 #date-div > input {
     margin-left: 5vw;
+    background-color: #EDDCD2;
 }
-#Name-div {
+#name-div {
     margin-left: 5vw;
+    display: grid;
+    grid-template-columns: 1;
 }
-#Name-div > input{
+#name-div > input{
     margin-left: 5vw;
+    width: 20vw;
+    background-color: #EDDCD2;
+}
+
+#zip-code-input{
+    width: 20vw;
+    background-color: #EDDCD2;
 }
 
 
-#Addresslabel{
-    margin-left: 2vw;
-}
-#Addresslabel > input{
+
+#address-label{
     margin-left: 5vw;
 }
-
+#address-div > input{
+    margin-left: 5vw;
+    width: 20vw;
+    background-color: #EDDCD2;
+    
+}
+h1{
+    margin-left: 5vw;
+}
 body{
-    background-color: gray;
+    background-color: #A5A58D;
+    margin-left: 30vw;
 }
 
-#sendButton{
+#send-button{
     margin-top: 4wv;
     margin-left: 5vw;
+    background-color: #EDDCD2;
 }
+#send-button  :hover{
+    margin-top: 4wv;
+    margin-left: 10vw;
+    
+}
+
+#city-input{
+    width: 20vw;
+}
+
+
+#address-input{
+    width: 20vw;
+}
+
+p{
+    margin-left: 5vw;
+}
+
+#plantName{
+    background-color: #EDDCD2;
+}
+
+#numberOfPlants{
+    background-color: #EDDCD2;
+}
+
+#addPlantBtn{
+    background-color: #EDDCD2;
+}
+
+#plants{
+    width: 26vw;
+   overflow-x: scroll;
+    background-color: #EDDCD2;
+    
+}
+
