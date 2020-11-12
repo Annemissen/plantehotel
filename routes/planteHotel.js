@@ -3,12 +3,18 @@ const express = require('express');
 const router = express.Router();
 
 router
+    .post("/",async (req,res)=>{
+        res.send(await controller.createCustomer(req.body));
+    })
+
+
+
     .post('/customer',async (request, response) => {
         //template
         function ok(input) { return (input && input.length > 2) }
         let { firstname, lastname,address,postalcode,city,plants,pickup} = request.body;
         if (ok(firstname) && ok(lastname)) {
-            let customer = await controller.createCustomer(firstname, lastname,address,postalcode,city,plants,pickup)
+            let customer = await controller.createCustomer()
             response.status(201).json({ resultat: 'Customer saved!' })
         } else {
             response.status(406).send('Too little text!');
