@@ -20,7 +20,7 @@ const createCustomer = async () => {
     let email = document.getElementById("email-input").value;
     //let plantcount = document.getElementById("numberOfPlants").value;
 
-    let newcustomer = await fetch("api/customer", {
+    let newcustomer = await fetch("/api/customer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -33,5 +33,6 @@ const createCustomer = async () => {
             email: email,
         }),
     });
+    console.log(firstname + " " + lastname);
 
 }

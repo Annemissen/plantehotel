@@ -8,11 +8,11 @@ const informationSchema = new mongoose.Schema({
     address: String,
     postalcode: String,
     city: String,
-    mobile : Number,
-    email : String,
-    plants: [{plantname : String, count: String}],
-    pickup : Boolean,
+    mobile: Number,
+    email: String,
+    plants: [{ plantname: String, count: String }],
+    pickup: Boolean,
 })
 
 
-exports.information = mongoose.model("information",informationSchema );
+exports.information = mongoose.model("information", informationSchema);
