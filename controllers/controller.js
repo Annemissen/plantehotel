@@ -4,13 +4,14 @@ const { firstname, lastname, address, postalcode, city, plantname, plantcount, p
 const config = require('../config');
 const customers = require('../models/models.js')
 const fetch = require('node-fetch');
+const { databaseURI } = require('../config');
 
 
 
 
-const URI = "mongodb +  srv://Grothen:p4ndek4gek0ngen@cluster0.abwhj.mongodb.net/PlantsDB?retryWrites=true&w=majority"
+const URI = 'mongodb +  srv://Grothen:p4ndek4gek0ngen@cluster0.abwhj.mongodb.net/PlantsDB?retryWrites=true&w=majority'
 
-mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(databaseURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 async function get(url) {
@@ -22,7 +23,7 @@ async function get(url) {
 
 exports.createCustomer = async function (body) {
     const { firstname, lastname, address, postalcode, city, mobile, email } = body;
-    //
+
     let res = await customers.information.create({
         firstname: firstname,
         lastname: lastname,

@@ -5,7 +5,7 @@ const config = require('./config')
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
-app.use('/api/customer', require('./routes/planteHotel.js'));
+app.use('/api/customers', require('./routes/planteHotel.js'));
 
 const port = process.env.PORT || config.localPort; // Heroku
 app.listen(port);
