@@ -1,6 +1,2 @@
-const address_label = document.getElementById("Address-label");
+const address_label = document.getElementById("address-label");
 console.log(address_label.innerText.length)
-
-
-
-
