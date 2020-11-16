@@ -125,8 +125,23 @@ p{
 
 #plants{
     width: 26vw;
-   overflow-x: scroll;
+    overflow-x: scroll;
     background-color: #EDDCD2;
     
 }
+#link-div{
+    margin-left: 5vw;
+
+}
+
+#checkbox-div{
+    margin-left: 5vw;
+}
+#checkbox-div > input{
+ 
+   background : #EDDCD2;
+}
+
+/* fejl css til validering af indputs  */
+
 
