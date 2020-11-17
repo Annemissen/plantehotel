@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!-- afsnit.html -->
 <html>
+<!-- ved ikke helt hvad det her gør -->
+<meta charset="utf-8">
 
 <head>
     <title>plantehotel</title>
@@ -8,22 +10,21 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="index.js" defer></script>
     <script src="plantehotelClient.js" defer></script>
+    <script src="regexVertify.js" defer></script>
 </head>
 <h1>Booking af hotelplads </h1>
 
 <body>
     <p>
-        Indlevering fnder sted, efter at vi har modtaget en <br>
-        booking med jeres navn, adresse, mobil-nummer,<br>
-        e-mail og antal planter samt ønskelig dato for<br>
-        indlevering. Vi sender en bookingbekræftigelse i en<br>
-        mail med en indleveringsadresse.<br>
+        Indlevering fnder sted, efter at vi har modtaget en <br> booking med jeres navn, adresse, mobil-nummer,<br> e-mail og antal planter samt ønskelig dato for<br> indlevering. Vi sender en bookingbekræftigelse i en<br> mail med en indleveringsadresse.<br>
     </p>
 
     <div id="name-div">
         <label id="name-label">Fornavn</label>
+        <!-- regex element 0-->
         <input id="name-input"></input>
         <label id="lastname-label">Efternavn</label>
+        <!-- regex element 1-->
         <input id="lastname-input"></input>
     </div>
 
@@ -32,24 +33,30 @@
     <div id="addressDiv">
 
         <label>Post nummer</label>
+        <!-- regex element 2-->
         <input id="zip-code-input"></input>
 
         <label id="city-label">By</label>
+        <!-- regex element 3-->
         <input id="city-input"></input>
 
         <label id="address-label-street">Vej og hus nummer</label>
+        <!-- regex element 4-->
         <input id="address-input"></input>
     </div>
 
     <div id="mobile-number-div">
         <label>Mobil nummer:</label>
+        <!-- regex element 5-->
         <input id="number-input" type="number"></input>
     </div>
     <div id="email-div">
         <label id="email-label">Email:</label>
+        <!-- regex element 6-->
         <input id="email-input" type="text"></input>
     </div>
     <div id="number-of-plants-div">
+
         <label id="">Angiv planter til indlogering</label>
         <table id="planttable">
             <tr>
@@ -58,12 +65,15 @@
             </tr>
             <tr>
                 <td>
+                    <!-- regex element 7-->
                     <input type="text" id="plantName"></input>
                 </td>
                 <td>
+                    <!-- regex element 8-->
                     <input type="number" id="numberOfPlants"></input>
                 </td>
                 <td>
+                    <!-- regex element 9-->
                     <button type="button" id="addPlantBtn">Tilføj</button>
                 </td>
             </tr>
@@ -77,33 +87,33 @@
     </div>
     <div id="date-div">
         <label id="data-label">Ønsket dato for indlevering</label>
-
+        <!-- regex element 10-->
         <input type="date" id="datepicker"></input>
 
     </div>
     <div>
-    <p>Indlevering kan ske alle lørdage mellem kl. 10 <br>
-        og kl. 15 fra den 27 oktober og frem til om med<br>
-        den 17 november. Vi opbevarer ikke kaktus,<br>
-        sukkulenter, bougainvillea og enkelte andre<br>
-        planter som kræver høj minimum-temperatur</p>
+        <p>Indlevering kan ske alle lørdage mellem kl. 10 <br> og kl. 15 fra den 27 oktober og frem til om med<br> den 17 november. Vi opbevarer ikke kaktus,<br> sukkulenter, bougainvillea og enkelte andre<br> planter som kræver høj minimum-temperatur</p>
 
     </div>
     <div id="link-div">
         <a href="https://drive.google.com/file/d/1NnPaj7J_1qORMPvzs4FLevwhb0xuf15F/view?usp=sharing/">regler og vilkår kan læses her</a>
-         
+
     </div>
     <div id="checkbox-div">
+
         <label>Jeg har læst regler og vilkår</label>
+        <!-- regex element 11-->
         <input type="checkbox"></input>
 
     </div>
     <div>
-           <button onclick="createCustomer()" id="send-button">Send resevation</button>
+        <!-- regex element 12-->
+        <button onclick="createCustomer()" id="send-button">Send resevation</button>
     </div>
 
 
-    
+
+
 
 </body>
 

@@ -11,7 +11,7 @@ const addPlant = async () => {
     console.log(plants);
 
     if (plantName && amountOfPlants) {
-        let selector = document.getElementById("planter");
+        let selector = document.getElementById("plants");
         let plant = {
             name: plantName,
             amount: amountOfPlants
