@@ -5,9 +5,11 @@ const router = express.Router();
 router
     .post("/", async (req, res) => {
         res.send(await controller.createCustomer(req.body));
-    });
+    })
 
-
+    .get("/", async(reg,res) => {
+        res.send(await controller.getCustomers());
+    })
 
 //  .post('/customer',async (request, response) => {
 //      //template

@@ -30,3 +30,10 @@ const createCustomer = async () => {
     console.log(firstname + " " + lastname);
 }
 
+const getCustomers = async () => {
+    const Customers = await fetch("/api/customers");
+    return await Customers.json();
+};
+
+
+console.log("kig her " + getCustomers());

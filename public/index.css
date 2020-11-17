@@ -1,46 +1,49 @@
-#addressDiv{
+#addressDiv {
     margin-left: 5vw;
     display: grid;
     grid-template-columns: 1;
 }
-#addressDiv > input{
+
+#addressDiv>input {
     margin-left: 5vw;
     background-color: #EDDCD2;
 }
 
-
-#email-div{
+#email-div {
     margin-left: 5vw;
     display: grid;
     grid-template-columns: 1;
 }
-#email-div > input{
- 
+
+#email-div>input {
     width: 20vw;
     margin-left: 5vw;
     background-color: #EDDCD2;
 }
 
-#number-input{
+#number-input {
     -webkit-appearance: none;
     margin: 0;
     width: 20vw;
     background-color: #EDDCD2;
 }
-#mobile-number-div{
+
+#mobile-number-div {
     margin-left: 5vw;
     display: grid;
     grid-template-columns: 1;
 }
-#mobile-number-div > input{
+
+#mobile-number-div>input {
     margin-left: 5vw;
     background-color: #EDDCD2;
 }
-#number-of-plants-div{
+
+#number-of-plants-div {
     margin-left: 5vw;
-    
 }
-#number-of-plants-div > input{
+
+#number-of-plants-div>input {
     margin-left: 5vw;
     background-color: #EDDCD2;
 }
@@ -48,100 +51,100 @@
 #date-div {
     margin-left: 5vw;
 }
-#date-div > input {
+
+#date-div>input {
     margin-left: 5vw;
     background-color: #EDDCD2;
 }
+
 #name-div {
     margin-left: 5vw;
     display: grid;
     grid-template-columns: 1;
 }
-#name-div > input{
+
+#name-div>input {
     margin-left: 5vw;
     width: 20vw;
     background-color: #EDDCD2;
 }
 
-#zip-code-input{
+#zip-code-input {
     width: 20vw;
     background-color: #EDDCD2;
 }
 
-
-
-#address-label{
+#address-label {
     margin-left: 5vw;
 }
-#address-div > input{
+
+#address-div>input {
     margin-left: 5vw;
     width: 20vw;
     background-color: #EDDCD2;
-    
 }
-h1{
+
+h1 {
     margin-left: 5vw;
 }
-body{
+
+body {
     background-color: #A5A58D;
     margin-left: 30vw;
 }
 
-#send-button{
+#send-button {
     margin-top: 4wv;
     margin-left: 5vw;
     background-color: #EDDCD2;
 }
-#send-button  :hover{
+
+#send-button :hover {
     margin-top: 4wv;
     margin-left: 10vw;
-    
 }
 
-#city-input{
+#city-input {
     width: 20vw;
 }
 
-
-#address-input{
+#address-input {
     width: 20vw;
 }
 
-p{
+p {
     margin-left: 5vw;
 }
 
-#plantName{
+#plantName {
     background-color: #EDDCD2;
 }
 
-#numberOfPlants{
+#numberOfPlants {
     background-color: #EDDCD2;
 }
 
-#addPlantBtn{
+#addPlantBtn {
     background-color: #EDDCD2;
 }
 
-#plants{
+#plants {
     width: 26vw;
     overflow-x: scroll;
     background-color: #EDDCD2;
-    
-}
-#link-div{
-    margin-left: 5vw;
-
 }
 
-#checkbox-div{
+#link-div {
     margin-left: 5vw;
 }
-#checkbox-div > input{
- 
-   background : #EDDCD2;
+
+#checkbox-div {
+    margin-left: 5vw;
 }
+
+#checkbox-div>input {
+    background: #EDDCD2;
+}
+
 
 /* fejl css til validering af indputs  */
-
-
