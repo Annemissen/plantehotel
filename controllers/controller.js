@@ -39,6 +39,9 @@ exports.createCustomer = async function (body) {
     return res;
 }
 
+exports.getCustomers = async function(){
+    return await model.information.find();
+}
 
 //address: address,
 //postalcode: postalcode,
