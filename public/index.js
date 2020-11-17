@@ -1,4 +1,5 @@
 
+
 const address_label = document.getElementById("address-label");
 
 
@@ -25,7 +26,7 @@ const createCustomer = async () => {
             postalcode: postalcode,
             mobile: mobile,
             email: email,
-            plants: list,
+
         }),
     });
 
@@ -35,4 +36,12 @@ const getCustomers = async () => {
     const Customers = await fetch("/api/customers");
     return await Customers.json();
 };
+
+async function getcustomerInfo(id) {
+    custom = await (await fetch('api/customers/' + id));
+
+}
+
+
+console.log(getCustomers());
 

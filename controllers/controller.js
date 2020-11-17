@@ -43,10 +43,3 @@ exports.getCustomers = async function(){
     return await model.information.find();
 }
 
-//address: address,
-//postalcode: postalcode,
-//city: city,
-//mobile: mobile,
-//email: email,
-//plants: [{ plantname: plantname, plantcount: plantcount }],
-//
