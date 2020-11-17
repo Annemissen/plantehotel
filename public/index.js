@@ -35,3 +35,5 @@ const getCustomers = async () => {
     return await Customers.json();
 };
 
+
+console.log("kig her " + getCustomers());
