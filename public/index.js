@@ -13,6 +13,7 @@ const createCustomer = async () => {
     let mobile = document.getElementById("number-input").value;
     let email = document.getElementById("email-input").value;
     //let plantcount = document.getElementById("numberOfPlants").value;
+    let plants = getPlants();
 
 
     let newcustomer = await fetch("/api/customers", {
@@ -26,6 +27,7 @@ const createCustomer = async () => {
             postalcode: postalcode,
             mobile: mobile,
             email: email,
+            plants: plants,
 
         }),
     });
