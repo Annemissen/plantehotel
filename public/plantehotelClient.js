@@ -45,7 +45,7 @@ const addPlant = async () => {
 
     }else if(plantName && !amountOfPlants){
         console.log("1")
-    if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value)){
+        if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value)){
         plantNameInputField.style.backgroundColor = "red";
         plantNameInputField.value = "";
     
