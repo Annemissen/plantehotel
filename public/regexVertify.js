@@ -62,19 +62,19 @@ sendtbotton.onclick = () => {
             email.style.backgroundColor = "#EDDCD2"
     }
 
-addPlantBtn.onclick = ()  =>{
-    if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
-    plantName.style.backgroundColor = "red"
-    else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
-    plantName.style.backgroundColor = "#EDDCD2"
+//addPlantBtn.onclick = ()  =>{
+//     if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
+//     plantName.style.backgroundColor = "red"
+//     else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
+//     plantName.style.backgroundColor = "#EDDCD2"
 
 
-    if (!/^[0-9]{1}$/.test(numberOfPlants.value))
-    numberOfPlants.style.backgroundColor = "red"
-    else if (/^[0-9]{1}$/.test(numberOfPlants.value))
-    numberOfPlants.style.backgroundColor = "#EDDCD2"
+//     if (!/^[0-9]{1}$/.test(numberOfPlants.value))
+//     numberOfPlants.style.backgroundColor = "red"
+//     else if (/^[0-9]{1}$/.test(numberOfPlants.value))
+//     numberOfPlants.style.backgroundColor = "#EDDCD2"
 
-}
+// }
 
     //plante navn?
 
