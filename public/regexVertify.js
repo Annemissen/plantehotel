@@ -13,8 +13,9 @@ const numberOfPlants  = document.getElementById("numberOfPlants");
 const addPlantBtn  = document.getElementById("addPlantBtn");
 const sendtbotton  = document.getElementById("send-button");
 
-sendtbotton.onclick = () => {
+function test (){
         //fornavn
+    
         if (!/^[a-zA-Zæøå]+$/.test(firstname.value))
         firstname.style.backgroundColor = "red"
         else if (/^[a-zA-Zæøå]+$/.test(firstname.value))
@@ -39,7 +40,7 @@ sendtbotton.onclick = () => {
             city.style.backgroundColor = "#EDDCD2"
             //vej og hus nr
 
-        if (!/^[-\sa-zA-Zæøå]+\s[0-9]$/.test(address.value))
+        if (!/^[-\sa-zA-Zæøå]+\s[0-9] $/.test(address.value))
             address.style.backgroundColor = "red"
         else if (/^[-\sa-zA-Zæøå]+\s[0-9]$/.test(address.value))
             address.style.backgroundColor = "#EDDCD2"
@@ -75,7 +76,7 @@ sendtbotton.onclick = () => {
 //     numberOfPlants.style.backgroundColor = "#EDDCD2"
 
 // }
-
+0
     //plante navn?
 
 //Antal?
