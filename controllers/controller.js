@@ -33,7 +33,7 @@ async function get(url) {
 }
 
 exports.createCustomer = async function (body) {
-    const { firstname, lastname, address, postalcode, city, mobile, email, pickup, plants } = body;
+    const { firstname, lastname, address, postalcode, city, mobile, email, pickup, plants,date } = body;
 
 
    
@@ -51,13 +51,17 @@ exports.createCustomer = async function (body) {
         email: email,
         pickup: pickup,
         plants: plants,
+        date: date,
+        
+
+
 
     });
     return res;
 }
 }
 
-exports.getCustomers = async function(){
+exports.getCustomers = async function () {
     return await model.information.find();
 }
 

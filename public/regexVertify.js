@@ -1,5 +1,6 @@
 
 
+
 // const elements = document.querySelectorAll('input,button');
 // const firstname  = document.getElementById("name-input");
 // const lastaname  = document.getElementById("lastname-input");
@@ -87,15 +88,15 @@
 
 //addPlantBtn.onclick = ()  =>{
 //     if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
-//     plantName.style.backgroundColor = "red"
+//         plantName.style.backgroundColor = "red"
 //     else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
-//     plantName.style.backgroundColor = "#EDDCD2"
+//         plantName.style.backgroundColor = "#EDDCD2"
 
 
 //     if (!/^[0-9]{1}$/.test(numberOfPlants.value))
-//     numberOfPlants.style.backgroundColor = "red"
+//         numberOfPlants.style.backgroundColor = "red"
 //     else if (/^[0-9]{1}$/.test(numberOfPlants.value))
-//     numberOfPlants.style.backgroundColor = "#EDDCD2"
+//         numberOfPlants.style.backgroundColor = "#EDDCD2"
 
 // }
 0

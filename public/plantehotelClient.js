@@ -84,6 +84,8 @@ const addPlant = async () => {
    // amountOfPlantsInputField.value = "";
 }
 
+
+
 async function generatePlantListOption(plant) {
     let template = await getText('/plantListOption.hbs');
     let compiledTemplate = Handlebars.compile(template);

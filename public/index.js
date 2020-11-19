@@ -81,7 +81,6 @@ const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
         return bolian;
     }
 
-
 const createCustomer = async () => {
     testRegX();
     let firstname = document.getElementById("name-input").value;
@@ -91,7 +90,9 @@ const createCustomer = async () => {
     let postalcode = document.getElementById("zip-code-input").value;
     let mobile = document.getElementById("number-input").value;
     let email = document.getElementById("email-input").value;
-    //let plantcount = document.getElementById("numberOfPlants").value;
+    plants
+    let date = document.getElementById("datepicker").value
+
 
 
     
@@ -108,10 +109,11 @@ const createCustomer = async () => {
             postalcode: postalcode,
             mobile: mobile,
             email: email,
-
+            plants: plants,
+            date: date,
         }),
-    });
 
+    });
 }
 
 const getCustomers = async () => {
