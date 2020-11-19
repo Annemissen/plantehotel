@@ -43,5 +43,3 @@ async function getcustomerInfo(id) {
 }
 
 
-console.log(getCustomers());
-
