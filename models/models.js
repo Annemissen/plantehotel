@@ -10,8 +10,10 @@ const informationSchema = new mongoose.Schema({
     city: String,
     mobile: Number,
     email: String,
-    plants: [{ plantname: String, count: String }],
+    plants: [String],
     pickup: Boolean,
+    date : Date,
+    
 })
 
 

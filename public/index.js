@@ -4,6 +4,10 @@ const address_label = document.getElementById("address-label");
 
 
 
+
+
+
+
 const createCustomer = async () => {
     let firstname = document.getElementById("name-input").value;
     let lastname = document.getElementById("lastname-input").value;
@@ -12,8 +16,9 @@ const createCustomer = async () => {
     let postalcode = document.getElementById("zip-code-input").value;
     let mobile = document.getElementById("number-input").value;
     let email = document.getElementById("email-input").value;
-    //let plantcount = document.getElementById("numberOfPlants").value;
-    let plants = getPlants();
+    plants
+    let date = document.getElementById("datepicker").value
+
 
 
     let newcustomer = await fetch("/api/customers", {
@@ -28,10 +33,10 @@ const createCustomer = async () => {
             mobile: mobile,
             email: email,
             plants: plants,
-
+            date: date,
         }),
-    });
 
+    });
 }
 
 const getCustomers = async () => {
@@ -43,5 +48,11 @@ async function getcustomerInfo(id) {
     custom = await (await fetch('api/customers/' + id));
 
 }
+
+//get all plants
+
+
+
+
 
 
