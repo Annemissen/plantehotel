@@ -13,7 +13,7 @@ const numberOfPlants  = document.getElementById("numberOfPlants");
 const addPlantBtn  = document.getElementById("addPlantBtn");
 const sendtbotton  = document.getElementById("send-button");
 
-function test (){
+function testRegX (){
         //fornavn
     
         if (!/^[a-zA-Zæøå]+$/.test(firstname.value))
