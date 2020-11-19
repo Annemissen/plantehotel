@@ -10,8 +10,8 @@ const addPlant = async () => {
     plants.push(plantString);
     console.log(plants);
 
-    if (plantName && amountOfPlants){
-        let selector = document.getElementById("planter");
+    if (plantName && amountOfPlants) {
+        let selector = document.getElementById("plants");
         let plant = {
             name: plantName,
             amount: amountOfPlants
@@ -44,7 +44,7 @@ async function getText(url) {
 //     datePicker.max = "2020-11-28";
 // }
 
-function main(){
+function main() {
     let addPlantBtn = document.getElementById("addPlantBtn");
     addPlantBtn.addEventListener("click", addPlant);
 

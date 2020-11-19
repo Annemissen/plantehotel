@@ -1,6 +1,6 @@
 
+
 const address_label = document.getElementById("address-label");
-console.log(address_label.innerText.length)
 
 
 
@@ -14,6 +14,7 @@ const createCustomer = async () => {
     let email = document.getElementById("email-input").value;
     //let plantcount = document.getElementById("numberOfPlants").value;
 
+
     let newcustomer = await fetch("/api/customers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -25,8 +26,20 @@ const createCustomer = async () => {
             postalcode: postalcode,
             mobile: mobile,
             email: email,
+
         }),
     });
-    console.log(firstname + " " + lastname);
+
 }
+
+const getCustomers = async () => {
+    const Customers = await fetch("/api/customers");
+    return await Customers.json();
+};
+
+async function getcustomerInfo(id) {
+    custom = await (await fetch('api/customers/' + id));
+
+}
+
 

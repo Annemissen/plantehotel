@@ -1,34 +1,46 @@
-const elements = document.querySelectorAll('input,button');
-elements[12].onclick = () => {
+const firstname = document.getElementById("name-input");
+const lastaname = document.getElementById("lastname-input");
+const zip = document.getElementById("zip-code-input");
+const city = document.getElementById("city-input");
+const address = document.getElementById("address-input");
+const number = document.getElementById("number-input");
+const email = document.getElementById("email-input");
+const plantName = document.getElementById("plantName");
+const numberOfPlants = document.getElementById("numberOfPlants");
+
+const addPlantBtn = document.getElementById("addPlantBtn");
+const sendtbotton = document.getElementById("send-button");
+
+sendtbotton.onclick = () => {
     //fornavn
-    if (!/^[a-zA-Zæøå]+$/.test(elements[0].value))
-        elements[0].style.backgroundColor = "red"
-    else if (/^[a-zA-Zæøå]+$/.test(elements[0].value))
-        elements[0].style.backgroundColor = "#EDDCD2"
+    if (!/^[a-zA-Zæøå]+$/.test(firstname.value))
+        firstname.style.backgroundColor = "red"
+    else if (/^[a-zA-Zæøå]+$/.test(firstname.value))
+        firstname.style.backgroundColor = "#EDDCD2"
 
     //efternavn
-    if (!/^[a-zA-Zæøå]+$/.test(elements[1].value))
-        elements[1].style.backgroundColor = "red"
-    else if (/^[a-zA-Z]+$/.test(elements[1].value))
-        elements[1].style.backgroundColor = "#EDDCD2"
+    if (!/^[a-zA-Zæøå]+$/.test(lastaname.value))
+        lastaname.style.backgroundColor = "red"
+    else if (/^[a-zA-Z]+$/.test(lastaname.value))
+        lastaname.style.backgroundColor = "#EDDCD2"
 
     //postnummer
-    if (!/^[0-9]{4}$/.test(elements[2].value))
-        elements[2].style.backgroundColor = "red"
-    else if (/^[0-9]{4}$/.test(elements[2].value))
-        elements[2].style.backgroundColor = "#EDDCD2"
+    if (!/^[0-9]{4}$/.test(zip.value))
+        zip.style.backgroundColor = "red"
+    else if (/^[0-9]{4}$/.test(zip.value))
+        zip.style.backgroundColor = "#EDDCD2"
 
     //By
-    if (!/^[-\sa-zA-Zæøå]+$/.test(elements[3].value))
-        elements[3].style.backgroundColor = "red"
-    else if (/^[-\sa-zA-Zæøå]+$/.test(elements[3].value))
-        elements[3].style.backgroundColor = "#EDDCD2"
+    if (!/^[-\sa-zA-Zæøå]+$/.test(city.value))
+        city.style.backgroundColor = "red"
+    else if (/^[-\sa-zA-Zæøå]+$/.test(city.value))
+        city.style.backgroundColor = "#EDDCD2"
         //vej og hus nr
 
-    if (!/^[-\sa-zA-Zæøå]+\s[0-9]$/.test(elements[4].value))
-        elements[4].style.backgroundColor = "red"
-    else if (/^[-\sa-zA-Zæøå]+\s[0-9]$/.test(elements[4].value))
-        elements[4].style.backgroundColor = "#EDDCD2"
+    if (!/^[-\sa-zA-Zæøå]+\s[0-9]$/.test(address.value))
+        address.style.backgroundColor = "red"
+    else if (/^[-\sa-zA-Zæøå]+\s[0-9]$/.test(address.value))
+        address.style.backgroundColor = "#EDDCD2"
         //Mobil nummer (element 5)
         /*
         //uden mellemrum
@@ -36,14 +48,28 @@ elements[12].onclick = () => {
         */
 
     //med mellemrum
-    if (!/^[0-9]{8}$/.test(elements[5].value))
-        elements[4].style.backgroundColor = "red"
-    else if (/^[0-9]{8}$/.test(elements[5].value))
-        elements[4].style.backgroundColor = "#EDDCD2"
+    if (!/^[0-9]{8}$/.test(number.value))
+        number.style.backgroundColor = "red"
+    else if (/^[0-9]{8}$/.test(number.value))
+        number.style.backgroundColor = "#EDDCD2"
 
     //email
-    if (!/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(elements[6].value))
-        elements[6].style.backgroundColor = "red"
-    else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(elements[6].value))
-        elements[6].style.backgroundColor = "#EDDCD2"
+    if (!/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(email.value))
+        email.style.backgroundColor = "red"
+    else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(email.value))
+        email.style.backgroundColor = "#EDDCD2"
+}
+
+addPlantBtn.onclick = () => {
+    if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
+        plantName.style.backgroundColor = "red"
+    else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
+        plantName.style.backgroundColor = "#EDDCD2"
+
+
+    if (!/^[0-9]{1}$/.test(numberOfPlants.value))
+        numberOfPlants.style.backgroundColor = "red"
+    else if (/^[0-9]{1}$/.test(numberOfPlants.value))
+        numberOfPlants.style.backgroundColor = "#EDDCD2"
+
 }

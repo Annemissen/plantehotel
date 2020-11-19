@@ -1,0 +1,90 @@
+body {
+    display: grid;
+    grid:
+      "headline headline headline"
+      "finder reservations customer";
+    grid-template-rows: 5fr 20fr;
+    grid-template-columns: 5fr 5fr 5fr;
+
+    width: 75%;
+    height: 500px;
+    margin: auto;
+}
+
+/* Style the header */
+.headline {
+    grid-area: headline;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
+
+#reservations,
+#customer,
+#finder {
+  padding: 10px;
+}
+
+/* Style the left column */
+#reservations {
+  grid-area: reservations;
+  align-items: center;
+}
+
+/* Style the middle column */
+#customer {
+  grid-area: customer;
+}
+
+/* Style the right column */
+#finder {
+  grid-area: finder;
+}
+
+h2 {
+    text-align: center;
+}
+
+/**/
+li {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    /*background-color: teal;*/
+    background-color: #A5A58D;
+    box-shadow: 2px 2px 6px black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /*justify-content: center;*/
+
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+p {
+    font-weight: 400;
+    background: none;
+    color: white;
+    margin: 5px;
+
+}
+
+.plantData .personData {
+    text-align: left;
+}
+
+hr {
+    width: 250px;
+}
+
+html {
+    background-color: #b7b7a4;
+}
