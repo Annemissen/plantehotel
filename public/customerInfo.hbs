@@ -1,0 +1,12 @@
+{{!-- generate customer --}}
+<p>{{ customer.firstname }} {{ customer.lastname }}</p>
+<p>{{customer.mobile}}</p>
+<p>{{customer.email}}</p>
+<p>{{customer.address}}, {{customer.postalcode}} {{customer.city}}</p>
+<p>Indleverer planterne d. {{customer.pickup}}</p>
+
+<hr>
+<h3>Planter</h3>
+{{#each customer.plants}}
+    <p>{{ this }}</p>
+{{/each}}
