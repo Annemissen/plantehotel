@@ -27,7 +27,7 @@ const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
     if (!/^[a-zA-Zæøå]+$/.test(lastanameInputField.value)){
     lastanameInputField.style.backgroundColor = "red"
     bolian = false;
-}
+    }
 
     else if (/^[a-zA-Z]+$/.test(lastanameInputField.value))
     lastanameInputField.style.backgroundColor = "#EDDCD2"
@@ -78,11 +78,12 @@ const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
     else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)){
         emailInputField.style.backgroundColor = "#EDDCD2";
     }
+     //   bolian = true;
         return bolian;
     }
 
 const createCustomer = async () => {
-    testRegX();
+   // testRegX();
     let firstname = document.getElementById("name-input").value;
     let lastname = document.getElementById("lastname-input").value;
     let address = document.getElementById("address-input").value;
@@ -96,7 +97,7 @@ const createCustomer = async () => {
 
 
     
-    if(testRegX()=== true){
+   //  if(testRegX()){
 
     let newcustomer = await fetch("/api/customers", {
         method: "POST",
@@ -113,7 +114,8 @@ const createCustomer = async () => {
             date: date,
         }),
 
-    });
+     });
+ //   }
 }
 
 const getCustomers = async () => {
@@ -121,8 +123,8 @@ const getCustomers = async () => {
     return await Customers.json();
 };
 
+
 async function getcustomerInfo(id) {
     custom = await (await fetch('api/customers/' + id));
 
-}
 }
