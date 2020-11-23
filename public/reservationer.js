@@ -1,3 +1,8 @@
+/*Function til at initialisere listen over reservationer */
+async function initResaervationsList(){
+
+}
+
 function addEventListenersToListItems(){
 
     let customer = document.getElementsByClassName("reservation");
