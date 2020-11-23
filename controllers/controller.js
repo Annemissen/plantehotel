@@ -36,11 +36,7 @@ exports.createCustomer = async function (body) {
     const { firstname, lastname, address, postalcode, city, mobile, email, pickup, plants,date } = body;
 
 
-   
-    await testRegX();
-    if(await testRegX()){
-    const { firstname, lastname, address, postalcode, city, mobile, email } = body;
-    
+ 
     let res = await customers.information.create({
         firstname: firstname,
         lastname: lastname,
@@ -59,7 +55,7 @@ exports.createCustomer = async function (body) {
     });
     return res;
 }
-}
+
 
 exports.getCustomers = async function () {
     return await model.information.find();
