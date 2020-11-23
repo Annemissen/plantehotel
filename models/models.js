@@ -17,4 +17,6 @@ const informationSchema = new mongoose.Schema({
 })
 
 
-exports.information = mongoose.model("information", informationSchema);
+//exports.information = mongoose.model("information", informationSchema);
+
+module.exports = mongoose.model("information", informationSchema);

@@ -12,49 +12,55 @@ const emailInputField  = document.getElementById("email-input");
 const plantNameInputField  = document.getElementById("plantName");
 const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
 
+    
+
     function testRegX (){
     //fornavn
-    let bolian = true;
 
-    if (!/^[a-zA-Zæøå]+$/.test(firstnameInputField.value)){
+    let bolian = true;  
+
+    if (!/^[-\sa-zA-Zæøå]+$/.test(firstnameInputField.value)){
     firstnameInputField.style.backgroundColor = "red"
     bolian = false;
     }
-    else if (/^[a-zA-Zæøå]+$/.test(firstnameInputField.value))
+    else if (/^[-\sa-zA-Zæøå]+$/.test(firstnameInputField.value)){
     firstnameInputField.style.backgroundColor = "#EDDCD2"
-
+    
+    }
     //efternavn
     if (!/^[a-zA-Zæøå]+$/.test(lastanameInputField.value)){
     lastanameInputField.style.backgroundColor = "red"
     bolian = false;
     }
 
-    else if (/^[a-zA-Z]+$/.test(lastanameInputField.value))
+    else if (/^[a-zA-Z]+$/.test(lastanameInputField.value)){
     lastanameInputField.style.backgroundColor = "#EDDCD2"
-
+    
+    }
     //postnummer
     if (!/^[0-9]{4}$/.test(zipInputField.value)){ 
     zipInputField.style.backgroundColor = "red"
     bolian = false;    
     }
-    else if (/^[0-9]{4}$/.test(zipInputField.value))
+    else if (/^[0-9]{4}$/.test(zipInputField.value)){
     zipInputField.style.backgroundColor = "#EDDCD2"
-
+    }
     //By
     if (!/^[-\sa-zA-Zæøå]+$/.test(cityInputField.value)){
         cityInputField.style.backgroundColor = "red"
         bolian = false;
     }
-    else if (/^[-\sa-zA-Zæøå]+$/.test(cityInputField.value))
+    else if (/^[-\sa-zA-Zæøå]+$/.test(cityInputField.value)){
         cityInputField.style.backgroundColor = "#EDDCD2"
-        //vej og hus nr
-
-    if (!/^[-\sa-zA-Zæøå]+\s[0-9]+$/.test(addressInputField.value)){
+    
+    }
+    //vej og hus nr
+    if (!/^[\sa-zA-Zæøå]+\s[0-9]{1,4}$/.test(addressInputField.value)){
      
         addressInputField.style.backgroundColor = "red"
         bolian = false;
     }
-    else if (/^[-\sa-zA-Zæøå]+\s[0-9]$/.test(addressInputField.value))
+    else if (/^[-\sa-zA-Zæøå]+\s[0-9]{1,4}$/.test(addressInputField.value)){
         addressInputField.style.backgroundColor = "#EDDCD2"
         //Mobil nummer (element 5)
         /*
@@ -63,13 +69,15 @@ const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
         */
 
     //med mellemrum
+    }
     if (!/^[0-9]{8}$/.test(numberInputField.value)){
         numberInputField.style.backgroundColor = "red"
         bolian = false;
     }
-        else if (/^[0-9]{8}$/.test(numberInputField.value))
+        else if (/^[0-9]{8}$/.test(numberInputField.value)){
         numberInputField.style.backgroundColor = "#EDDCD2"
-
+       
+    }
     //email
     if (!/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)){
         emailInputField.style.backgroundColor = "red"
@@ -77,13 +85,19 @@ const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
     }
     else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)){
         emailInputField.style.backgroundColor = "#EDDCD2";
+       
     }
-     //   bolian = true;
+
+        console.log('bolian value '+ bolian);
         return bolian;
+       
     }
 
 const createCustomer = async () => {
-   // testRegX();
+
+    //testRegX();
+
+    if(testRegX() === true){
     let firstname = document.getElementById("name-input").value;
     let lastname = document.getElementById("lastname-input").value;
     let address = document.getElementById("address-input").value;
@@ -97,7 +111,7 @@ const createCustomer = async () => {
 
 
     
-   //  if(testRegX()){
+
 
     let newcustomer = await fetch("/api/customers", {
         method: "POST",
@@ -116,6 +130,8 @@ const createCustomer = async () => {
 
      });
  //   }
+}
+    
 }
 
 const getCustomers = async () => {

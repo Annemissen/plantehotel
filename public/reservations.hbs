@@ -1,0 +1,11 @@
+{{#each reservation}}
+    <li id="{{this.mobile}}" class="reservation">
+        <p class="personData"> {{this.firstname}}  {{this.lastname}}, tlf. {{this.mobile}}</p>
+        <hr>
+        {{#if this.pickup}}
+            <p class="plantData"><u>Ønsker planterne afhentet d. {{this.date}} </u></p>
+        {{else}}
+            <p class="plantData">Indleverer planterne d. {{this.date}}</p>
+        {{/if}}
+    </li>
+{{/each}}
