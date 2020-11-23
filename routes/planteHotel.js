@@ -7,25 +7,34 @@ const fetch = require('node-fetch');
 router
 // post a customer
     .post("/", async (req, res) => {
-        res.send(await controller.createCustomer(req.body));
-    })
-// get all customers
-    .get("/", async (reg, res) => {
-        res.send(await controller.getCustomers());
+        try{
+        let customer = await controller.createCustomer(req.body)
+        res.status(206).json({result: "Customer saved!"})
+        } catch (e) {
+            sendStatus(e,res)
+        }
     })
 
 // endpoint to get specific customer found with phone number
-    .get("/:customer", async (req, res) => {
-        const customers = await controller.getCustomers();
-        const id = req.params.customer;
-
-        console.log(id);
-        // console.log(customers);
-        let add = customers.find(x => x.mobile == id);
-        // const json2 = await add.json();
-        console.log(add);
-        res.send(add);
+    .get("/specific/:customer", async (req, res) => {
+        try {
+            let specificCustomer = await controller.findCustomer(req.params.customer)
+            res.send(specificCustomer)
+        } catch (e) {
+            sendStatus(e,res)
+        }
     })
+
+// endpoint to get list of all costumers
+    .get("/allCustomers", async (req,res)=>{
+        try {
+            let customers = await controller.getAllCustomers();
+            res.json(customers);
+        } catch (e) {
+            sendStatus(e, res);
+        }
+    })
+    
 
 
 

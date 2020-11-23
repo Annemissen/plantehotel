@@ -12,15 +12,11 @@
 const mongoose = require('mongoose');
 const model = require('../models/models')
 const { firstname, lastname, address, postalcode, city, plantname, plantcount, pickup, mobile, email } = model;
-const config = require('../config');
-const customers = require('../models/models.js')
 const fetch = require('node-fetch');
 const { databaseURI } = require('../config');
 const test = require('../public/regexVertify.js')
 
 
-
-const URI = 'mongodb +  srv://Grothen:p4ndek4gek0ngen@cluster0.abwhj.mongodb.net/PlantsDB?retryWrites=true&w=majority'
 
 mongoose.connect(databaseURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -35,9 +31,7 @@ async function get(url) {
 exports.createCustomer = async function (body) {
     const { firstname, lastname, address, postalcode, city, mobile, email, pickup, plants,date } = body;
 
-
- 
-    let res = await customers.information.create({
+    let res = model.create({
         firstname: firstname,
         lastname: lastname,
         address: address,
@@ -49,16 +43,20 @@ exports.createCustomer = async function (body) {
         plants: plants,
         date: date,
         
-
-
-
     });
     return res;
 }
 
 
-exports.getCustomers = async function () {
-    return await model.information.find();
+
+exports.getAllCustomers = function () {
+    return model.find().exec();
+};
+
+exports.findCustomer = function (number) {
+    return model.findOne({ mobile: number},function (err,model){
+        if (err) return handleError(err);
+    })
 }
 
 
