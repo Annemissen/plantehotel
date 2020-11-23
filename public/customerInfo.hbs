@@ -1,9 +1,15 @@
-{{!-- generate customer --}}
+{{!-- generate selected customer --}}
 <p>{{ customer.firstname }} {{ customer.lastname }}</p>
 <p>{{customer.mobile}}</p>
 <p>{{customer.email}}</p>
 <p>{{customer.address}}, {{customer.postalcode}} {{customer.city}}</p>
-<p>Indleverer planterne d. {{customer.pickup}}</p>
+
+{{!-- if statement depending on whether the customer wishes for a pickup of their plants --}}
+{{#if customer.pickup}}
+    <p><u>Ønsker planterne afhentet d. {{customer.date}} </u></p>
+{{else}}
+    <p>Indleverer planterne d. {{customer.date}}</p>
+{{/if}}
 
 <hr>
 <h3>Planter</h3>

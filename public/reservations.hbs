@@ -1,12 +1,11 @@
 {{#each reservation}}
-    <li id="53535311" class="reservation">
-        <p class="personData"> TEST OBJ Jacob Groth, tlf. 53535311</p>
+    <li id="{{this.mobile}}" class="reservation">
+        <p class="personData"> {{this.firstname}}  {{this.lastname}}, tlf. {{this.mobile}}</p>
         <hr>
-        <p class="plantData">Indleverer d. 28/11/2020</p>
-    </li>
-    <li id="{{reservation.mobile}}" class="reservation">
-        <p class="personData"> {{reservation.firstname}}  {{reservation.lastname}}, tlf. {{reservation.mobile}}</p>
-        <hr>
-        <p class="plantData">Indleverer d. 28/11/2020</p>
+        {{#if this.pickup}}
+            <p class="plantData"><u>Ønsker planterne afhentet d. {{this.date}} </u></p>
+        {{else}}
+            <p class="plantData">Indleverer planterne d. {{this.date}}</p>
+        {{/if}}
     </li>
 {{/each}}
