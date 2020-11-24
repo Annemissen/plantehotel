@@ -11,8 +11,8 @@ const numberInputField   = document.getElementById("number-input");
 const emailInputField  = document.getElementById("email-input");
 const plantNameInputField  = document.getElementById("plantName");
 const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
-
-    
+const plantsSelector = document.getElementById("plants");
+const plantsLabel = document.getElementById("plantsLabel");
 
     function testRegX (){
     //fornavn
@@ -86,6 +86,16 @@ const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
     else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)){
         emailInputField.style.backgroundColor = "#EDDCD2";
        
+    }
+
+    if(plantsSelector.innerText  === ""){
+        console.log(plantsSelector.values);
+        plantsLabel.style.color = "red";
+        plantsLabel.style.backgroundColor = "black";
+        bolian = false;
+    }else{
+        plantsLabel.style.color = "black";
+        plantsLabel.style.backgroundColor = "#A5A58D";
     }
 
         console.log('bolian value '+ bolian);

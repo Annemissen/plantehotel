@@ -10,6 +10,8 @@ const addPlant = async () => {
     plants.push(plantString);
     console.log(plants);
 
+    const plantsLabel = document.getElementById("plantsLabel");
+
     if (plantName && amountOfPlants) {
         let selector = document.getElementById("plants");
         let plant = {
@@ -36,10 +38,11 @@ const addPlant = async () => {
         amountOfPlantsInputField.style.backgroundColor = "#EDDCD2"
 
         }
-
+        plantsLabel.style.backgroundColor = "#A5A58D";
+        plantsLabel.style.color = "black";
         amountOfPlantsInputField.value = "";
         plantNameInputField.value = "";
-
+        
         plantNameInputField.style.backgroundColor = "#EDDCD2";
         amountOfPlantsInputField.style.backgroundColor = "#EDDCD2";
 
