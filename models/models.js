@@ -10,9 +10,13 @@ const informationSchema = new mongoose.Schema({
     city: String,
     mobile: Number,
     email: String,
-    plants: [{ plantname: String, count: String }],
+    plants: [String],
     pickup: Boolean,
+    date : Date,
+    
 })
 
 
-exports.information = mongoose.model("information", informationSchema);
+//exports.information = mongoose.model("information", informationSchema);
+
+module.exports = mongoose.model("information", informationSchema);

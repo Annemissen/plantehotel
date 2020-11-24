@@ -3,8 +3,9 @@
 
 <head>
     <title>plantehotel</title>
-    <link rel="stylesheet" href="reservationer.css" />
+    <link rel="stylesheet" href="reservations.css" />
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="reservations.js" defer></script>
 </head>
 
 <body>
@@ -12,36 +13,15 @@
     <h1 class="headline">Oversigt over reservationer</h1>
     <div id="reservations">
         <h2>Reservationer</h2>
-        <ul>
-            <li>
-                <p class="personData">Hans Hansen, tlf. 22 93 32 29</p>
-                <hr>
-                <p class="plantData">Indleverer d. 21/11/2020</p>
-                <hr>
-                <p class="plantData">Hans@gamil.com</p>
-            </li>
+        <ul id="reservationsList">
+
         </ul>
     </div>
     <div id="customer">
         <h2>Informationer om kunde</h2>
+        <div id="selectedCustomer">
 
-        <ul>
-            <li>
-                <p class="personData">Hans Hansen, tlf. 22 93 32 29</p>
-                <hr>
-                <p class="plantData">Indleverer d. 21/11/2020</p>
-                <hr>
-                <p class="plantData">Hans@gamil.com</p>
-            </li>
-            <li>
-                <p class="personData">Dorte Jacobsen, tlf. 27 30 94 81</p>
-                <hr>
-                <p class="plantData">Indleverer d. 28/11/2020</p>
-                <hr>
-                <p class="plantData">Dorte@gamil.com</p>
-            </li>
-        </ul>
-
+        </div>
     </div>
     <div id="finder">
         <h2>Søg efter kunde</h2>

@@ -2,7 +2,7 @@ body {
     display: grid;
     grid: "headline headline headline" "finder customer reservations";
     grid-template-rows: 5fr 20fr;
-    grid-template-columns: 5fr 5fr 5fr;
+    grid-template-columns: 5fr 8fr 8fr;
     width: 75%;
     height: 500px;
     margin: auto;
@@ -53,10 +53,11 @@ h2 {
 
 /**/
 
-li {
-    margin: 10px;
+.reservation,
+#selectedCustomer {
+    margin: 20px;
     padding: 10px;
-    width: 300px;
+    width: auto;
     /*background-color: teal;*/
     background-color: #A5A58D;
     box-shadow: 2px 2px 6px black;
@@ -68,6 +69,15 @@ li {
     animation-name: fadein;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
+}
+
+
+/*Heading "Planter" in div customer*/
+
+h3 {
+    color: white;
+    padding-bottom: 0cm;
+    margin: 1mm;
 }
 
 @keyframes fadein {
@@ -84,10 +94,6 @@ p {
     background: none;
     color: white;
     margin: 5px;
-}
-
-.plantData .personData {
-    text-align: left;
 }
 
 hr {
