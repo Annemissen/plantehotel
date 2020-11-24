@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    
+
     <h1 class="headline">Oversigt over reservationer</h1>
     <div id="reservations">
         <h2>Reservationer</h2>
@@ -17,21 +17,46 @@
                 <p class="personData">Hans Hansen, tlf. 22 93 32 29</p>
                 <hr>
                 <p class="plantData">Indleverer d. 21/11/2020</p>
-            </li>
-            <li>
-                <p class="personData">Dorte Jacobsen, tlf. 27 30 94 81</p>
                 <hr>
-                <p class="plantData">Indleverer d. 28/11/2020</p>
+                <p class="plantData">Hans@gamil.com</p>
             </li>
         </ul>
     </div>
     <div id="customer">
         <h2>Informationer om kunde</h2>
 
+        <ul>
+            <li>
+                <p class="personData">Hans Hansen, tlf. 22 93 32 29</p>
+                <hr>
+                <p class="plantData">Indleverer d. 21/11/2020</p>
+                <hr>
+                <p class="plantData">Hans@gamil.com</p>
+            </li>
+            <li>
+                <p class="personData">Dorte Jacobsen, tlf. 27 30 94 81</p>
+                <hr>
+                <p class="plantData">Indleverer d. 28/11/2020</p>
+                <hr>
+                <p class="plantData">Dorte@gamil.com</p>
+            </li>
+        </ul>
+
     </div>
     <div id="finder">
-        <h2>Evt. søgning på kunde</h2>
+        <h2>Søg efter kunde</h2>
+        <form action="/action_page.php" method="get">
+            <label for="personer">Vælg personer fra database:</label>
+            <input list="person" name="personer" id="personer">
+            <datalist id="person">
+              <option value="Dorte Jensen">
+              <option value="Hans Hansen">
+            </datalist>
+            <button onclick "getCustomersearch()" id="søgperson ">Søg efter personer</button>
+        </form>
     </div>
+
+
 </body>
 
 </html>

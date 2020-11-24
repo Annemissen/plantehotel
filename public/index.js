@@ -1,10 +1,8 @@
-
-
 const address_label = document.getElementById("address-label");
 
 
 
-const createCustomer = async () => {
+const createCustomer = async() => {
     let firstname = document.getElementById("name-input").value;
     let lastname = document.getElementById("lastname-input").value;
     let address = document.getElementById("address-input").value;
@@ -32,14 +30,11 @@ const createCustomer = async () => {
 
 }
 
-const getCustomers = async () => {
+const getCustomers = async() => {
     const Customers = await fetch("/api/customers");
     return await Customers.json();
 };
 
 async function getcustomerInfo(id) {
     custom = await (await fetch('api/customers/' + id));
-
 }
-
-
