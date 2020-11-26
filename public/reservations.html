@@ -25,15 +25,12 @@
     </div>
     <div id="finder">
         <h2>Søg efter kunde</h2>
-        <form action="/action_page.php" method="get">
-            <label for="personer">Vælg personer fra database:</label>
-            <input list="person" name="personer" id="personer">
-            <datalist id="person">
-              <option value="Dorte Jensen">
-              <option value="Hans Hansen">
+        <label for="personer">Vælg personer fra database:</label>
+        <input list="person" name="personer" id="søgpersoner">
+        <datalist id="person">
             </datalist>
-            <button onclick "getCustomersearch()" id="søgperson ">Søg efter personer</button>
-        </form>
+        <button onclick="customerSearch()" id="søgperson ">Søg efter personer</button>
+        <button onclick="searchClear()" id="clearbottom ">Nulstil søgning</button>
     </div>
 
 

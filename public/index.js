@@ -13,25 +13,27 @@ const numberOfPlantsInputField = document.getElementById("numberOfPlants");
 
 
 function testRegX() {
-    //fornavn
+
 
     let bolian = true;
-
-    if (!/^[-\sa-zA-Zæøå]+$/.test(firstnameInputField.value)) {
+    //fornavn
+    if (!/^[-\sa-zA-ZæøåÆØÅäöüÄÖÜ]+$/.test(firstnameInputField.value)) {
         firstnameInputField.style.backgroundColor = "red"
         bolian = false;
-    } else if (/^[-\sa-zA-Zæøå]+$/.test(firstnameInputField.value)) {
+    } else if (/^[-\sa-zA-ZæøåÆØÅäöüÄÖÜ]+$/.test(firstnameInputField.value)) {
         firstnameInputField.style.backgroundColor = "#EDDCD2"
 
     }
+
     //efternavn
-    if (!/^[a-zA-Zæøå]+$/.test(lastanameInputField.value)) {
+    if (!/^[a-zA-ZæøåÆØÅäöüÄÖÜ]+$/.test(lastanameInputField.value)) {
         lastanameInputField.style.backgroundColor = "red"
         bolian = false;
-    } else if (/^[a-zA-Z]+$/.test(lastanameInputField.value)) {
+    } else if (/^[a-zA-ZæøåÆØÅäöüÄÖÜ]+$/.test(lastanameInputField.value)) {
         lastanameInputField.style.backgroundColor = "#EDDCD2"
 
     }
+
     //postnummer
     if (!/^[0-9]{4}$/.test(zipInputField.value)) {
         zipInputField.style.backgroundColor = "red"
@@ -39,29 +41,25 @@ function testRegX() {
     } else if (/^[0-9]{4}$/.test(zipInputField.value)) {
         zipInputField.style.backgroundColor = "#EDDCD2"
     }
+
     //By
-    if (!/^[-\sa-zA-Zæøå]+$/.test(cityInputField.value)) {
+    if (!/^[-\sa-zA-ZæøåÆØÅ]+$/.test(cityInputField.value)) {
         cityInputField.style.backgroundColor = "red"
         bolian = false;
-    } else if (/^[-\sa-zA-Zæøå]+$/.test(cityInputField.value)) {
+    } else if (/^[-\sa-zA-ZæøåÆØÅ]+$/.test(cityInputField.value)) {
         cityInputField.style.backgroundColor = "#EDDCD2"
-
     }
+
     //vej og hus nr
-    if (!/^[\sa-zA-Zæøå]+\s[0-9]{1,4}$/.test(addressInputField.value)) {
+    if (!/^[\sa-zA-ZæøåÆØÅ]+\s[0-9]{1,4}$/.test(addressInputField.value)) {
 
         addressInputField.style.backgroundColor = "red"
         bolian = false;
-    } else if (/^[-\sa-zA-Zæøå]+\s[0-9]{1,4}$/.test(addressInputField.value)) {
+    } else if (/^[-\sa-zA-ZæøåÆØÅ]+\s[0-9]{1,4}$/.test(addressInputField.value)) {
         addressInputField.style.backgroundColor = "#EDDCD2"
-            //Mobil nummer (element 5)
-            /*
-            //uden mellemrum
-            /^[-\s0-9]{11}$/
-            */
-
-        //med mellemrum
     }
+
+    //med mellemrum
     if (!/^[0-9]{8}$/.test(numberInputField.value)) {
         numberInputField.style.backgroundColor = "red"
         bolian = false;
@@ -69,6 +67,7 @@ function testRegX() {
         numberInputField.style.backgroundColor = "#EDDCD2"
 
     }
+
     //email
     if (!/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)) {
         emailInputField.style.backgroundColor = "red"
