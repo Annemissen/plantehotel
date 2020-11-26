@@ -5,6 +5,7 @@ const express = require('express')
 
 const app = express()
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/session'));
 app.use(express.json());
 
 // Create/post reservation
@@ -15,7 +16,8 @@ app.use('/reservations', require('./routes/reservationsSession.js'));
 
 // Login page
 app.get('/login', function(req, res){
-    res.sendFile(__dirname+'/public/login.html')
+    res.sendFile(__dirname+'/public/session/login.html')
+    // res.sendFile(__dirname+'/public/session/login.html')
 });
 
 

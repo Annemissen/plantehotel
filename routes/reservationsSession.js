@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const session = require("express-session");
 
 const path = require('path');
-const publicPath = path.join(__dirname, '/../public')
+const publicPath = path.join(__dirname, '/../public/session')
 router.use(express.static(publicPath));
 
 
