@@ -1,3 +1,4 @@
+//const { GridFSBucket } = require("mongodb");
 
 
 const address_label = document.getElementById("address-label");
@@ -13,6 +14,11 @@ const plantNameInputField  = document.getElementById("plantName");
 const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
 const plantsSelector = document.getElementById("plants");
 const plantsLabel = document.getElementById("plantsLabel");
+const popup = document.getElementById("modal-content");
+const popupHeader = document.getElementById("modal-header");
+const status = document.getElementById("status");
+const overlay = document.getElementById("overlay");
+
 
     function testRegX (){
     //fornavn
@@ -31,7 +37,7 @@ const plantsLabel = document.getElementById("plantsLabel");
     if (!/^[a-zA-Zæøå]+$/.test(lastanameInputField.value)){
     lastanameInputField.style.backgroundColor = "red"
     bolian = false;
-    }
+    } 
 
     else if (/^[a-zA-Z]+$/.test(lastanameInputField.value)){
     lastanameInputField.style.backgroundColor = "#EDDCD2"
@@ -98,7 +104,23 @@ const plantsLabel = document.getElementById("plantsLabel");
         plantsLabel.style.backgroundColor = "#A5A58D";
     }
 
+    if(bolian){
+        popup.style.display = "grid"
+        overlay.style.display = "block"
+        popupHeader.style.backgroundColor = "green";
+        status.innerText = "Godkedt"
+    }else{
+        popup.style.display = "grid";
+        overlay.style.display = "block";
+        popupHeader.style.backgroundColor = "red";
+        status.innerText = "Ikke godkedt"
+
+        
+
+    }
+
         console.log('bolian value '+ bolian);
+
         return bolian;
        
     }
@@ -152,5 +174,12 @@ const getCustomers = async () => {
 
 async function getcustomerInfo(id) {
     custom = await (await fetch('api/customers/' + id));
+
+}
+
+function hidepopup(){
+    popup.style.display = "none";
+    overlay.style.display = "none";
+
 
 }
