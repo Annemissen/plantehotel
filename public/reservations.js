@@ -5,17 +5,20 @@ async function initResaervationsList() {
     let reservations = await get("/api/customers/allCustomers"); // getting the reservations from the database
 
     //Converting the r.date to a readable string
-    for (r of reservations){
+    for (r of reservations) {
         let date = new Date(r.date); // creating a new date object by using the date form the reservation
         date = date.toLocaleDateString('de-DE'); // formatting the date to dd.mm.yyyy
         r.date = date; // setting the date of the reservation to the newly created and formatted date object
     }
 
     // Generating and setting html for the reservationsList
-    let reservationItemsHtml = await generateAllReservations(reservations); 
+    let reservationItemsHtml = await generateAllReservations(reservations);
     let reservationsList = document.getElementById("reservationsList");
     reservationsList.innerHTML = reservationItemsHtml;
 }
+
+
+
 
 /**
  * Generates html list items (li) for the #reservationsList ul
@@ -75,8 +78,7 @@ async function displayCustomer(phoneNumber) {
         let customerHtml = await generateCustomerInfo(customer);
         let customerInfoDiv = document.getElementById('selectedCustomer');
         customerInfoDiv.innerHTML = customerHtml;
-    }
-    catch (error) {
+    } catch (error) {
         console.error(error.name + ": " + error.message);
     }
 }
@@ -88,15 +90,62 @@ function addEventListenersToListItems() {
     let customers = document.getElementsByClassName("reservation");
     for (c of customers) {
         let customer = document.getElementById(c.id);
-        c.addEventListener("click", function () {
+        c.addEventListener("click", function() {
             displayCustomer(customer.id);
         });
     }
 }
 
+
+async function findCustomerOnName(id) {
+    custom = await (await fetch('api/customers/' + id));
+
+}
+
+async function getcustomerInfo2(id) {
+    custom = await (await fetch('api/customers/' + id));
+
+}
+
+/**
+ * Make a search
+ */
+const customerSearch = async() => {
+    let searchField = document.getElementById("søgpersoner").value;
+    let reservations = await get("/api/customers/allCustomers"); // getting the reservations from the database
+
+    let array = [];
+
+    for (r of reservations) {
+        if (r.firstname === searchField) {
+            array.push(r);
+        } else if (r.mobile === parseInt(searchField)) {
+            array.push(r);
+            console.log(array);
+        } else if (r.email === searchField) {
+            array.push(r);
+            console.log(array);
+        }
+    }
+    // Generating and setting html for the reservationsList
+    let reservationItemsHtml = await generateAllReservations(array);
+    let reservationsList = document.getElementById("reservationsList");
+    reservationsList.innerHTML = reservationItemsHtml;
+    addEventListenersToListItems();
+}
+
+/**
+ * Clear search
+ */
+const searchClear = async() => {
+    await initResaervationsList();
+    addEventListenersToListItems();
+}
+
+
 async function main() {
-        await initResaervationsList();
-        addEventListenersToListItems();
+    await initResaervationsList();
+    addEventListenersToListItems();
 }
 
 main();

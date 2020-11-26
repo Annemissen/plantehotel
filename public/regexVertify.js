@@ -1,6 +1,3 @@
-
-
-
 // const elements = document.querySelectorAll('input,button');
 // const firstname  = document.getElementById("name-input");
 // const lastaname  = document.getElementById("lastname-input");
@@ -54,7 +51,7 @@
 //             //vej og hus nr
 
 //         if (!/^[-\sa-zA-Zæøå]+\s[0-9] $/.test(address.value)){
-         
+
 //             address.style.backgroundColor = "red"
 //             bolian = false;
 //         }
@@ -100,7 +97,7 @@
 
 // }
 0
-    //plante navn?
+//plante navn?
 
 //Antal?
 
