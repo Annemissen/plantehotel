@@ -2,7 +2,7 @@
  * Function for initializing the reservations list
  */
 async function initResaervationsList() {
-    let reservations = await get("/api/customers/allCustomers"); // getting the reservations from the database
+    let reservations = await get("/reservations/allCustomers"); // getting the reservations from the database
 
     //Converting the r.date to a readable string
     for (r of reservations){
@@ -64,7 +64,7 @@ async function getText(url) {
  */
 async function displayCustomer(phoneNumber) {
     try {
-        let customer = await get("/api/customers/specific/" + phoneNumber);
+        let customer = await get("/reservations/specific/" + phoneNumber);
 
         //Converting the customer.date to a readable string
         let date = new Date(customer.date); // creating a new date object by using the date form the reservation
