@@ -19,7 +19,6 @@ app.get('/login', function(req, res){
 });
 
 
-
 const port = process.env.PORT || config.localPort; // Heroku
 app.listen(port);
 console.log('Listening on port ' + port + ' ...');

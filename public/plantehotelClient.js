@@ -1,6 +1,6 @@
 let plants = []
 
-const addPlant = async () => {
+const addPlant = async() => {
     let plantNameInputField = document.getElementById("plantName");
     let amountOfPlantsInputField = document.getElementById("numberOfPlants");
 
@@ -19,21 +19,21 @@ const addPlant = async () => {
         plant = [plant];
         let option = await generatePlantListOption(plant);
         selector.innerHTML += option;
-        
-        if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value)){
-        plantNameInputField.style.backgroundColor = "red";
-        plantNameInputField.value = "";
-        
-        }else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
-        plantNameInputField.style.backgroundColor = "#EDDCD2"
-    
-    
-        if (!/^[0-9]{1}$/.test(numberOfPlants.value)){
-        amountOfPlantsInputField.style.backgroundColor = "red"
-        amountOfPlantsInputField.value = "";
-        
-        }else if (/^[0-9]{1}$/.test(numberOfPlants.value)){
-        amountOfPlantsInputField.style.backgroundColor = "#EDDCD2"
+
+        if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value)) {
+            plantNameInputField.style.backgroundColor = "red";
+            plantNameInputField.value = "";
+
+        } else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value))
+            plantNameInputField.style.backgroundColor = "#EDDCD2"
+
+
+        if (!/^[0-9]{1}$/.test(numberOfPlants.value)) {
+            amountOfPlantsInputField.style.backgroundColor = "red"
+            amountOfPlantsInputField.value = "";
+
+        } else if (/^[0-9]{1}$/.test(numberOfPlants.value)) {
+            amountOfPlantsInputField.style.backgroundColor = "#EDDCD2"
 
         }
 
@@ -43,45 +43,45 @@ const addPlant = async () => {
         plantNameInputField.style.backgroundColor = "#EDDCD2";
         amountOfPlantsInputField.style.backgroundColor = "#EDDCD2";
 
-    }else if(plantName && !amountOfPlants){
+    } else if (plantName && !amountOfPlants) {
         console.log("1")
-        if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value)){
-        plantNameInputField.style.backgroundColor = "red";
-        plantNameInputField.value = "";
-    
-        }else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value)){
-        plantNameInputField.style.backgroundColor = "#EDDCD2";
-        
-        amountOfPlantsInputField.style.backgroundColor = "red";
+        if (!/^[-\sa-zA-Zæøå]+$/.test(plantName.value)) {
+            plantNameInputField.style.backgroundColor = "red";
+            plantNameInputField.value = "";
 
-    }
-       
+        } else if (/^[-\sa-zA-Zæøå]+$/.test(plantName.value)) {
+            plantNameInputField.style.backgroundColor = "#EDDCD2";
 
-    }else if(!plantName && amountOfPlants){
+            amountOfPlantsInputField.style.backgroundColor = "red";
+
+        }
+
+
+    } else if (!plantName && amountOfPlants) {
         console.log("2");
-        if (!/^[0-9]{1}$/.test(numberOfPlants.value)){
+        if (!/^[0-9]{1}$/.test(numberOfPlants.value)) {
             numberOfPlants.style.backgroundColor = "red";
             plantNameInputField.value = "";
-            
-            }else if (/^[0-9]{1}$/.test(numberOfPlants.value)){
-                numberOfPlants.style.backgroundColor = "#EDDCD2"
-    
-            }
 
-            plantNameInputField.style.backgroundColor = "red"  ;
+        } else if (/^[0-9]{1}$/.test(numberOfPlants.value)) {
+            numberOfPlants.style.backgroundColor = "#EDDCD2"
 
-    }else {
+        }
+
+        plantNameInputField.style.backgroundColor = "red";
+
+    } else {
         console.log("3");
-   
+
         plantNameInputField.style.backgroundColor = "red";
         amountOfPlantsInputField.style.backgroundColor = "red";
-       
+
     }
 
-    
 
-   // plantNameInputField.value = "";
-   // amountOfPlantsInputField.value = "";
+
+    // plantNameInputField.value = "";
+    // amountOfPlantsInputField.value = "";
 }
 
 
