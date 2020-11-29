@@ -3,30 +3,56 @@ const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
 
+const path = require('path');
+const publicPath = path.join(__dirname, '/../public')
+router.use(express.static(publicPath));
+
+
+
 
 router
-// post a customer
+    // post a customer
     .post("/", async (req, res) => {
-        res.send(await controller.createCustomer(req.body));
-    })
-// get all customers
-    .get("/", async (reg, res) => {
-        res.send(await controller.getCustomers());
-    })
-
-// endpoint to get specific customer found with phone number
-    .get("/:customer", async (req, res) => {
-        const customers = await controller.getCustomers();
-        const id = req.params.customer;
-
-        console.log(id);
-        // console.log(customers);
-        let add = customers.find(x => x.mobile == id);
-        // const json2 = await add.json();
-        console.log(add);
-        res.send(add);
+        try {
+            let customer = await controller.createCustomer(req.body)
+            res.status(206).json({ result: "Customer saved!" })
+        } catch (e) {
+            sendStatus(e, res)
+        }
     })
 
+    .get("/test", async (req, res) => {
+        try {
+            // res.redirect(__dirname + '/../public/reservations.html')
+            res.sendfile(publicPath + '/reservations.html');
+            // res.sendfile(__dirname + '/../public/reservations.html');
+        }
+        catch(e){
+            console.error(e.name + ": " + e.messsage);
+            sendStatus(e, res)
+        }
+    })
+/*   
+   // endpoint to get specific customer found with phone number
+   .get("/specific/:customer", async (req, res) => {
+       try {
+           let specificCustomer = await controller.findCustomer(req.params.customer)
+           res.send(specificCustomer)
+       } catch (e) {
+           sendStatus(e,res)
+       }
+   })
+
+// endpoint to get list of all costumers
+   .get("/allCustomers", async (req,res)=>{
+       try {
+           let customers = await controller.getAllCustomers();
+           res.json(customers);
+       } catch (e) {
+           sendStatus(e, res);
+       }
+   })
+*/
 
 
 function sendStatus(e, response) {

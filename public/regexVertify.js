@@ -75,8 +75,8 @@ const sendtbotton = document.getElementById("send-button");
 //         numberOfPlants.style.backgroundColor = "#EDDCD2"
 
 // }
-
-    //plante navn?
+0
+//plante navn?
 
 //Antal?
 
