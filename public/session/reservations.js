@@ -97,22 +97,12 @@ function addEventListenersToListItems() {
 }
 
 
-async function findCustomerOnName(id) {
-    custom = await (await fetch('api/customers/' + id));
-
-}
-
-async function getcustomerInfo2(id) {
-    custom = await (await fetch('api/customers/' + id));
-
-}
-
 /**
  * Make a search
  */
 const customerSearch = async() => {
     let searchField = document.getElementById("søgpersoner").value;
-    let reservations = await get("/api/customers/allCustomers"); // getting the reservations from the database
+    let reservations = await get("/reservations/allCustomers"); // getting the reservations from the database
 
     let array = [];
 
