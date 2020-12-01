@@ -42,7 +42,6 @@ exports.createCustomer = async function(body) {
         pickup: pickup,
         plants: plants,
         date: date,
-
     });
     return res;
 }
