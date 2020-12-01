@@ -1,14 +1,5 @@
 const address_label = document.getElementById("address-label");
 
-const firstnameInputField = document.getElementById("name-input");
-const lastanameInputField = document.getElementById("lastname-input");
-const zipInputField = document.getElementById("zip-code-input");
-const cityInputField = document.getElementById("city-input");
-const addressInputField = document.getElementById("address-input");
-const numberInputField = document.getElementById("number-input");
-const emailInputField = document.getElementById("email-input");
-const plantNameInputField = document.getElementById("plantName");
-const numberOfPlantsInputField = document.getElementById("numberOfPlants");
 
 
 const firstnameInputField   = document.getElementById("name-input");
@@ -90,9 +81,40 @@ function testRegX() {
         bolian = false;
     } else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)) {
         emailInputField.style.backgroundColor = "#EDDCD2";
+       
     }
-    console.log('bolian value ' + bolian);
-    return bolian;
+
+    if(plantsSelector.innerText  === ""){
+        console.log(plantsSelector.values);
+        plantsLabel.style.color = "red";
+        plantsLabel.style.backgroundColor = "black";
+        bolian = false;
+    }else{
+        plantsLabel.style.color = "black";
+        plantsLabel.style.backgroundColor = "#A5A58D";
+    }
+
+    if(bolian){
+        popup.style.display = "grid"
+        overlay.style.display = "block"
+        popupHeader.style.backgroundColor = "green";
+        status.innerText = "Godkedt"
+    }else{
+        popup.style.display = "grid";
+        overlay.style.display = "block";
+        popupHeader.style.backgroundColor = "red";
+        status.innerText = "Ikke godkedt"
+
+        
+
+    }
+
+        console.log('bolian value '+ bolian);
+
+        return bolian;
+       
+    }
+    
 
 const createCustomer = async () => {
 
@@ -151,5 +173,4 @@ function hidepopup(){
     overlay.style.display = "none";
 
 
-}
 }
