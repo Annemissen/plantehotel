@@ -17,10 +17,7 @@ async function post(url, objekt) {
 
 loginBtn.onclick = async () => {
     try {
-        console.log('test 1');
-        console.log(name.value);
         await post("reservations/login", { name: name.value, password: password.value });
-        console.log('test 2');
         
         window.location.href = "reservations/overview";       
         
