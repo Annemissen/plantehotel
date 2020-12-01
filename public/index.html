@@ -14,6 +14,19 @@
 </head>
 <h1>Booking af hotelplads </h1>
 
+<div class="modal-content" id="modal-content">
+    
+    <div class="modal-header" id="modal-header">
+      <button onclick="hidepopup()">X</button>
+      <h2>Order status</h2>
+    </div>
+    <div class="modal-body">
+      <p id="status">Godkendt</p>
+    </div>
+    <div class="modal-footer">
+     </div>
+  </div>
+
 <body>
     <p>
         Indlevering fnder sted, efter at vi har modtaget en <br> booking med jeres navn, adresse, mobil-nummer,<br> e-mail og antal planter samt ønskelig dato for<br> indlevering. Vi sender en bookingbekræftigelse i en<br> mail med en indleveringsadresse.<br>
@@ -57,7 +70,7 @@
     </div>
     <div id="number-of-plants-div">
 
-        <label id="">Angiv planter til indlogering</label>
+        <label id="plantsLabel">Angiv planter til indlogering</label>
         <table id="planttable">
             <tr>
                 <td>Plantenavn</td>
@@ -114,8 +127,13 @@
 
 
 
-
 </body>
 
 
+
+  <div id="overlay"></div>
+
+
+
+  
 </html>

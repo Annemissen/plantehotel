@@ -1,15 +1,22 @@
 const address_label = document.getElementById("address-label");
 
-const firstnameInputField = document.getElementById("name-input");
-const lastanameInputField = document.getElementById("lastname-input");
-const zipInputField = document.getElementById("zip-code-input");
-const cityInputField = document.getElementById("city-input");
-const addressInputField = document.getElementById("address-input");
-const numberInputField = document.getElementById("number-input");
-const emailInputField = document.getElementById("email-input");
-const plantNameInputField = document.getElementById("plantName");
-const numberOfPlantsInputField = document.getElementById("numberOfPlants");
 
+
+const firstnameInputField   = document.getElementById("name-input");
+const lastanameInputField   = document.getElementById("lastname-input");
+const zipInputField  = document.getElementById("zip-code-input");
+const cityInputField  = document.getElementById("city-input");
+const addressInputField   = document.getElementById("address-input");
+const numberInputField   = document.getElementById("number-input");
+const emailInputField  = document.getElementById("email-input");
+const plantNameInputField  = document.getElementById("plantName");
+const numberOfPlantsInputField  = document.getElementById("numberOfPlants");
+const plantsSelector = document.getElementById("plants");
+const plantsLabel = document.getElementById("plantsLabel");
+const popup = document.getElementById("modal-content");
+const popupHeader = document.getElementById("modal-header");
+const status = document.getElementById("status");
+const overlay = document.getElementById("overlay");
 
 
 function testRegX() {
@@ -74,50 +81,80 @@ function testRegX() {
         bolian = false;
     } else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)) {
         emailInputField.style.backgroundColor = "#EDDCD2";
+       
+    }
+
+    if(plantsSelector.innerText  === ""){
+        console.log(plantsSelector.values);
+        plantsLabel.style.color = "red";
+        plantsLabel.style.backgroundColor = "black";
+        bolian = false;
+    }else{
+        plantsLabel.style.color = "black";
+        plantsLabel.style.backgroundColor = "#A5A58D";
+    }
+
+    if(bolian){
+        popup.style.display = "grid"
+        overlay.style.display = "block"
+        popupHeader.style.backgroundColor = "green";
+        status.innerText = "Godkedt"
+    }else{
+        popup.style.display = "grid";
+        overlay.style.display = "block";
+        popupHeader.style.backgroundColor = "red";
+        status.innerText = "Ikke godkedt"
+
+        
 
     }
-    console.log('bolian value ' + bolian);
-    return bolian;
 
-}
+        console.log('bolian value '+ bolian);
 
-const createCustomer = async() => {
+        return bolian;
+       
+    }
+    
+
+const createCustomer = async () => {
+
     //testRegX();
 
-    if (testRegX() === true) {
-        let firstname = document.getElementById("name-input").value;
-        let lastname = document.getElementById("lastname-input").value;
-        let address = document.getElementById("address-input").value;
-        let city = document.getElementById("city-input").value;
-        let postalcode = document.getElementById("zip-code-input").value;
-        let mobile = document.getElementById("number-input").value;
-        let email = document.getElementById("email-input").value;
-        plants
-        let date = document.getElementById("datepicker").value
+    if(testRegX() === true){
+    let firstname = document.getElementById("name-input").value;
+    let lastname = document.getElementById("lastname-input").value;
+    let address = document.getElementById("address-input").value;
+    let city = document.getElementById("city-input").value;
+    let postalcode = document.getElementById("zip-code-input").value;
+    let mobile = document.getElementById("number-input").value;
+    let email = document.getElementById("email-input").value;
+    plants
+    let date = document.getElementById("datepicker").value
 
 
 
+    
 
 
+    let newcustomer = await fetch("/api/customers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            firstname: firstname,
+            lastname: lastname,
+            address: address,
+            city: city,
+            postalcode: postalcode,
+            mobile: mobile,
+            email: email,
+            plants: plants,
+            date: date,
+        }),
 
-        let newcustomer = await fetch("/api/customers", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                firstname: firstname,
-                lastname: lastname,
-                address: address,
-                city: city,
-                postalcode: postalcode,
-                mobile: mobile,
-                email: email,
-                plants: plants,
-                date: date,
-            }),
-
-        });
-    }
-
+     });
+ //   }
+}
+    
 }
 
 const getCustomers = async() => {
@@ -125,7 +162,15 @@ const getCustomers = async() => {
     return await Customers.json();
 };
 
+
 async function getcustomerInfo(id) {
     custom = await (await fetch('api/customers/' + id));
+
+}
+
+function hidepopup(){
+    popup.style.display = "none";
+    overlay.style.display = "none";
+
 
 }
