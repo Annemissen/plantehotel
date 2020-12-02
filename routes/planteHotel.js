@@ -34,6 +34,17 @@ router
             sendStatus(e, res);
         }
     })
+
+// endpoint for deleting a reservation
+    .delete("/removeCustomer/:phoneNr",async (req,res)=>{
+        try {
+            let number = req.params.phoneNr
+            await controller.removeCustomer(number)
+            res.sendStatus(200).json({result: "OK"})
+        } catch (e) {
+            sendStatus(e,res)
+        }
+    })
     
 
 

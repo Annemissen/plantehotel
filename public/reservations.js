@@ -94,6 +94,25 @@ function addEventListenersToListItems() {
     }
 }
 
+/**
+ * Delete reservation button method
+ */
+async function deleteReservation(){
+    let customer = document.getElementById('selectedCustomer')
+    console.log(customer.children[1].innerHTML)
+    let number = customer.children[1].innerHTML
+    console.log(number)
+    let statusCode = await fetch("/api/customers/removeCustomer/"+number, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+    })
+    let elem = document.getElementById(number);
+    elem.parentNode.removeChild(elem);
+    let elem2 = document.getElementById("selectedCustomer")
+    elem2.innerHTML=""
+
+}
+
 async function main() {
         await initResaervationsList();
         addEventListenersToListItems();

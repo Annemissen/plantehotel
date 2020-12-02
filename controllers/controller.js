@@ -48,6 +48,10 @@ exports.createCustomer = async function (body) {
 }
 
 
+exports.removeCustomer = function (number) {
+    return model.deleteOne({mobile: number}
+    )}
+
 
 exports.getAllCustomers = function () {
     return model.find().exec();
