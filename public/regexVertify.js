@@ -1,3 +1,4 @@
+/*
 const elements = document.querySelectorAll('input,button');
 const firstname = document.getElementById("name-input");
 const lastaname = document.getElementById("lastname-input");
@@ -12,7 +13,7 @@ const numberOfPlants = document.getElementById("numberOfPlants");
 
 const addPlantBtn = document.getElementById("addPlantBtn");
 const sendtbotton = document.getElementById("send-button");
-
+*/
 // sendtbotton.onclick = () => {
 //     //fornavn
 //     if (!/^[a-zA-Zæøå]+$/.test(firstname.value))

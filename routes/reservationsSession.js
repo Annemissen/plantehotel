@@ -107,6 +107,23 @@ router
         }
     })
 
+    // endpoint for deleting a reservation
+    .delete("/removeCustomer/:phoneNr",async (req,res)=>{
+        const name = req.session.name;
+        if (name){
+            try {
+                let number = req.params.phoneNr
+                await controller.removeCustomer(number)
+                return res.sendStatus(200)
+            } catch (e) {
+                return sendStatus(e,res)
+            }
+        }
+        else {
+            res.redirect('/noAcces.html');
+        }
+    })
+
 
 
 function sendStatus(e, response) {
