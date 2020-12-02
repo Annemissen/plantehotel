@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    
     <title>plantehotel</title>
     <link rel="stylesheet" href="reservations.css" />
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -9,7 +10,7 @@
 </head>
 
 <body>
-    
+
     <h1 class="headline">Oversigt over reservationer</h1>
     <div id="reservations">
         <h2>Reservationer</h2>
@@ -20,15 +21,23 @@
     <div id="customer">
         <h2>Informationer om kunde</h2>
         <div id="selectedCustomer">
-            
+
         </div>
             <div>
                 <input id="deleteButton" onclick="deleteReservation()" type="button" value="Slet reservation">
             </div>
     </div>
     <div id="finder">
-        <h2>Evt. søgning på kunde</h2>
+        <h2>Søg efter kunde</h2>
+        <label for="personer">Vælg personer fra database:</label>
+        <input list="person" name="personer" id="søgpersoner">
+        <datalist id="person">
+            </datalist>
+        <button onclick="customerSearch()" id="søgperson ">Søg efter personer</button>
+        <button onclick="searchClear()" id="clearbottom ">Nulstil søgning</button>
     </div>
+
+
 </body>
 
 </html>

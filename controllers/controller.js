@@ -28,8 +28,8 @@ async function get(url) {
     return await respons.json();
 }
 
-exports.createCustomer = async function (body) {
-    const { firstname, lastname, address, postalcode, city, mobile, email, pickup, plants,date } = body;
+exports.createCustomer = async function(body) {
+    const { firstname, lastname, address, postalcode, city, mobile, email, pickup, plants, date } = body;
 
     let res = model.create({
         firstname: firstname,
@@ -42,7 +42,6 @@ exports.createCustomer = async function (body) {
         pickup: pickup,
         plants: plants,
         date: date,
-        
     });
     return res;
 }
@@ -53,12 +52,26 @@ exports.removeCustomer = function (number) {
     )}
 
 
-exports.getAllCustomers = function () {
+exports.getAllCustomers = function() {
     return model.find().exec();
 };
 
-exports.findCustomer = function (number) {
-    return model.findOne({ mobile: number},function (err,model){
+exports.findCustomer = function(number) {
+    return model.findOne({ mobile: number }, function(err, model) {
+        if (err) return handleError(err);
+    })
+}
+
+exports.findCustomerOnName = function(name) {
+    let array = [];
+    array = model.find({ firstname: name }, function(err, model) {
+        if (err) return handleError(err);
+    })
+    return array;
+}
+
+exports.findCustomerOnEmail = function(mail) {
+    return model.findOne({ email: mail }, function(err, model) {
         if (err) return handleError(err);
     })
 }
@@ -102,7 +115,7 @@ exports.findCustomer = function (number) {
 //         //vej og hus nr
 
 //     if (!/^[-\sa-zA-Zæøå]+\s[0-9] $/.test(addressInputField.value)){
-     
+
 //         addressInputField.style.backgroundColor = "red"
 //         bolian = false;
 //     }
@@ -142,4 +155,3 @@ exports.findCustomer = function (number) {
 //email: email,
 //plants: [{ plantname: plantname, plantcount: plantcount }],
 //pickup: pickup,
-
