@@ -63,7 +63,7 @@ router
             } else {
                 try {
                     console.log('Test 1');
-                    response.redirect('/login');
+                    response.redirect('/reservations/login');
                 }
                 catch (e){
                     console.error(e.name + ": " + e.messsage);

@@ -180,8 +180,6 @@ function addLogoutEventListener(){
             window.location.href = "/reservations/login";       
             
         } catch (e) {
-            password.value = "";
-            loginError.innerHTML = "Forkert password eller intet brugernavn!";
             console.error(e.name + ": " + e.messsage);
         }
 
