@@ -106,6 +106,36 @@ function addEventListenersToListItems() {
     }
 }
 
+/**
+ * Delete reservation button method
+ */
+async function deleteReservation(){
+    let customer = document.getElementById('selectedCustomer')
+    console.log(customer.children[1].innerHTML)
+    let number = customer.children[1].innerHTML
+    console.log(number)
+
+    var c = confirm("Vil du slette "+customer.children[0].innerHTML+"?")
+    if(c==true){
+        let statusCode = await fetch("/reservations/removeCustomer/"+number, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        })
+        if(statusCode.status===200){
+        let elem = document.getElementById(number);
+        elem.parentNode.removeChild(elem);
+        let elem2 = document.getElementById("selectedCustomer")
+        elem2.innerHTML=""
+        } else {
+            console.log("delete error")
+        }
+        
+    } else {
+        // nothing
+    }
+
+}
+
 
 /**
  * Make a search
