@@ -1,4 +1,27 @@
 /**
+ * get.js
+ * @param {*} url 
+ */
+async function get(url) {
+    const respons = await fetch(url);
+    if (respons.status !== 200) // OK
+        throw new Error(respons.status);
+    return await respons.json();
+}
+
+/**
+ * get.js
+ * @param {*} url 
+ */
+async function getNotJson(url) {
+    const respons = await fetch(url);
+    if (respons.status !== 200) // OK
+        throw new Error(respons.status);
+        // return await respons.json();
+
+}
+
+/**
  * Function for initializing the reservations list
  */
 async function initResaervationsList() {
@@ -17,9 +40,6 @@ async function initResaervationsList() {
     reservationsList.innerHTML = reservationItemsHtml;
 }
 
-
-
-
 /**
  * Generates html list items (li) for the #reservationsList ul
  */
@@ -29,16 +49,6 @@ async function generateAllReservations(reservation) {
     return compiledTemplate({ reservation });
 }
 
-/**
- * get.js
- * @param {*} url 
- */
-async function get(url) {
-    const respons = await fetch(url);
-    if (respons.status !== 200) // OK
-        throw new Error(respons.status);
-    return await respons.json();
-}
 
 /**
  * Generates html for the #selectedCustomer div
@@ -132,10 +142,27 @@ const searchClear = async() => {
     addEventListenersToListItems();
 }
 
+function addLogoutEventListener(){
+    const logoutBtn = document.getElementById('logout');
+    logoutBtn.addEventListener('click', async function(){
+        try {
+            await getNotJson("/reservations/logout");
+            window.location.href = "/reservations/login";       
+            
+        } catch (e) {
+            password.value = "";
+            loginError.innerHTML = "Forkert password eller intet brugernavn!";
+            console.error(e.name + ": " + e.messsage);
+        }
+
+    });
+}
+
 
 async function main() {
     await initResaervationsList();
     addEventListenersToListItems();
+    addLogoutEventListener();
 }
 
 main();

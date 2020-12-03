@@ -32,6 +32,15 @@ const users = [{ name: 'un', password: 'pw' }];
 
 router
 
+    .get('/login', async (request, response) => {
+        try{
+            response.sendFile(publicPath + '/login.html')
+        }
+        catch (e){
+            console.error(e.name + ": " + e.messsage);
+        }
+    })
+
     .post('/login', async (request, response) => {
         const { name, password } = request.body;
         
@@ -46,18 +55,23 @@ router
     })
 
     // TODO
-    /*
+    
     .get('/logout', (request, response) => {
         request.session.destroy((err) => {
             if (err) {
                 console.log(err);
             } else {
-                response.redirect('/');
-                console.log('Måske et redirect til login.html i stedet for');
+                try {
+                    console.log('Test 1');
+                    response.redirect('/login');
+                }
+                catch (e){
+                    console.error(e.name + ": " + e.messsage);
+                }
             }
         });
     })
-    */
+    
 
     // endpoint to get specific customer found with phone number
     .get("/specific/:customer", async (req, res) => {
