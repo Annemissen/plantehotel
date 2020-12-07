@@ -164,15 +164,15 @@ const createCustomer = async () => {
     }
 }
 
-const getCustomers = async () => {
-    const Customers = await fetch("/api/customers");
-    return await Customers.json();
-};
+// const getCustomers = async () => {
+//     const Customers = await fetch("/api/customers");
+//     return await Customers.json();
+// };
 
 
-async function getcustomerInfo(id) {
-    custom = await (await fetch('api/customers/' + id));
-}
+// async function getcustomerInfo(id) {
+//     custom = await (await fetch('api/customers/' + id));
+// }
 
 function hidepopup() {
     popup.style.display = "none";
