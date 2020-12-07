@@ -21,38 +21,17 @@ router
         }
     })
 
-    .get("/test", async (req, res) => {
-        try {
-            // res.redirect(__dirname + '/../public/reservations.html')
-            res.sendfile(publicPath + '/reservations.html');
-            // res.sendfile(__dirname + '/../public/reservations.html');
-        }
-        catch(e){
-            console.error(e.name + ": " + e.messsage);
-            sendStatus(e, res)
-        }
-    })
-/*   
-   // endpoint to get specific customer found with phone number
-   .get("/specific/:customer", async (req, res) => {
-       try {
-           let specificCustomer = await controller.findCustomer(req.params.customer)
-           res.send(specificCustomer)
-       } catch (e) {
-           sendStatus(e,res)
-       }
-   })
-
-// endpoint to get list of all costumers
-   .get("/allCustomers", async (req,res)=>{
-       try {
-           let customers = await controller.getAllCustomers();
-           res.json(customers);
-       } catch (e) {
-           sendStatus(e, res);
-       }
-   })
-*/
+    // .get("/test", async (req, res) => {
+    //     try {
+    //         // res.redirect(__dirname + '/../public/reservations.html')
+    //         res.sendfile(publicPath + '/reservations.html');
+    //         // res.sendfile(__dirname + '/../public/reservations.html');
+    //     }
+    //     catch(e){
+    //         console.error(e.name + ": " + e.messsage);
+    //         sendStatus(e, res)
+    //     }
+    // })
 
 
 function sendStatus(e, response) {

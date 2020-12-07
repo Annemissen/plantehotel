@@ -17,7 +17,7 @@
 <div class="modal-content" id="modal-content">
     
     <div class="modal-header" id="modal-header">
-      <button onclick="hidepopup()">X</button>
+      <button id="hidepopupBtn">X</button>
       <h2>Order status</h2>
     </div>
     <div class="modal-body">
@@ -101,7 +101,7 @@
     <div id="date-div">
         <label id="data-label">Ønsket dato for indlevering</label>
         <!-- regex element 10-->
-        <input  onclick="noMondays()" type="date" id="datepicker" class="datepicker"></input>
+        <input type="date" id="datepicker" class="datepicker"></input>
 
     </div>
     <div id="pickup">
@@ -125,7 +125,7 @@
     </div>
     <div>
         <!-- regex element 12-->
-        <button onclick="createCustomer()" id="send-button">Send resevation</button>
+        <button id="send-button">Send resevation</button>
     </div>
 
 
