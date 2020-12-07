@@ -42,11 +42,14 @@ exports.createCustomer = async function(body) {
         pickup: pickup,
         plants: plants,
         date: date,
-
     });
     return res;
 }
 
+
+exports.removeCustomer = function (number) {
+    return model.deleteOne({mobile: number}
+    )}
 
 
 exports.getAllCustomers = function() {

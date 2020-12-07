@@ -1,4 +1,27 @@
 /**
+ * get.js
+ * @param {*} url 
+ */
+async function get(url) {
+    const respons = await fetch(url);
+    if (respons.status !== 200) // OK
+        throw new Error(respons.status);
+    return await respons.json();
+}
+
+/**
+ * get.js
+ * @param {*} url 
+ */
+async function getNotJson(url) {
+    const respons = await fetch(url);
+    if (respons.status !== 200) // OK
+        throw new Error(respons.status);
+        // return await respons.json();
+
+}
+
+/**
  * Function for initializing the reservations list
  */
 async function initResaervationsList() {
@@ -17,9 +40,6 @@ async function initResaervationsList() {
     reservationsList.innerHTML = reservationItemsHtml;
 }
 
-
-
-
 /**
  * Generates html list items (li) for the #reservationsList ul
  */
@@ -29,16 +49,6 @@ async function generateAllReservations(reservation) {
     return compiledTemplate({ reservation });
 }
 
-/**
- * get.js
- * @param {*} url 
- */
-async function get(url) {
-    const respons = await fetch(url);
-    if (respons.status !== 200) // OK
-        throw new Error(respons.status);
-    return await respons.json();
-}
 
 /**
  * Generates html for the #selectedCustomer div
@@ -96,6 +106,36 @@ function addEventListenersToListItems() {
     }
 }
 
+/**
+ * Delete reservation button method
+ */
+async function deleteReservation(){
+    let customer = document.getElementById('selectedCustomer')
+    console.log(customer.children[1].innerHTML)
+    let number = customer.children[1].innerHTML
+    console.log(number)
+
+    var c = confirm("Vil du slette "+customer.children[0].innerHTML+"?")
+    if(c==true){
+        let statusCode = await fetch("/reservations/removeCustomer/"+number, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        })
+        if(statusCode.status===200){
+        let elem = document.getElementById(number);
+        elem.parentNode.removeChild(elem);
+        let elem2 = document.getElementById("selectedCustomer")
+        elem2.innerHTML=""
+        } else {
+            console.log("delete error")
+        }
+        
+    } else {
+        // nothing
+    }
+
+}
+
 
 /**
  * Make a search
@@ -132,10 +172,25 @@ const searchClear = async() => {
     addEventListenersToListItems();
 }
 
+function addLogoutEventListener(){
+    const logoutBtn = document.getElementById('logout');
+    logoutBtn.addEventListener('click', async function(){
+        try {
+            await getNotJson("/reservations/logout");
+            window.location.href = "/reservations/login";       
+            
+        } catch (e) {
+            console.error(e.name + ": " + e.messsage);
+        }
+
+    });
+}
+
 
 async function main() {
     await initResaervationsList();
     addEventListenersToListItems();
+    addLogoutEventListener();
 }
 
 main();

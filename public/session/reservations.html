@@ -12,6 +12,7 @@
 <body>
 
     <h1 class="headline">Oversigt over reservationer</h1>
+    <button id="logout">Log out</button>
     <div id="reservations">
         <h2>Reservationer</h2>
         <ul id="reservationsList">
@@ -23,6 +24,9 @@
         <div id="selectedCustomer">
 
         </div>
+            <div>
+                <input id="deleteButton" onclick="deleteReservation()" type="button" value="Slet reservation">
+            </div>
     </div>
     <div id="finder">
         <h2>Søg efter kunde</h2>

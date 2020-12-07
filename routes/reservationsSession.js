@@ -32,6 +32,15 @@ const users = [{ name: 'un', password: 'pw' }];
 
 router
 
+    .get('/login', async (request, response) => {
+        try{
+            response.sendFile(publicPath + '/login.html')
+        }
+        catch (e){
+            console.error(e.name + ": " + e.messsage);
+        }
+    })
+
     .post('/login', async (request, response) => {
         const { name, password } = request.body;
         
@@ -46,18 +55,23 @@ router
     })
 
     // TODO
-    /*
+    
     .get('/logout', (request, response) => {
         request.session.destroy((err) => {
             if (err) {
                 console.log(err);
             } else {
-                response.redirect('/');
-                console.log('Måske et redirect til login.html i stedet for');
+                try {
+                    console.log('Test 1');
+                    response.redirect('/reservations/login');
+                }
+                catch (e){
+                    console.error(e.name + ": " + e.messsage);
+                }
             }
         });
     })
-    */
+    
 
     // endpoint to get specific customer found with phone number
     .get("/specific/:customer", async (req, res) => {
@@ -100,6 +114,23 @@ router
             catch (e){
                 sendStatus(e, res);
                 console.error(e.name + ": " + e.messsage);
+            }
+        }
+        else {
+            res.redirect('/noAcces.html');
+        }
+    })
+
+    // endpoint for deleting a reservation
+    .delete("/removeCustomer/:phoneNr",async (req,res)=>{
+        const name = req.session.name;
+        if (name){
+            try {
+                let number = req.params.phoneNr
+                await controller.removeCustomer(number)
+                return res.sendStatus(200)
+            } catch (e) {
+                return sendStatus(e,res)
             }
         }
         else {
