@@ -101,7 +101,7 @@
     <div id="date-div">
         <label id="data-label">Ønsket dato for indlevering</label>
         <!-- regex element 10-->
-        <input type="date" id="datepicker"></input>
+        <input  onclick="noMondays()" type="date" id="datepicker" class="datepicker"></input>
 
     </div>
     <div id="pickup">
@@ -118,7 +118,7 @@
     </div>
     <div id="checkbox-div">
 
-        <label>Jeg har læst regler og vilkår</label>
+        <label id="rulesLabel">Jeg har læst regler og vilkår</label>
         <!-- regex element 11-->
         <input id="rulesCheckBox" type="checkbox"></input>
 

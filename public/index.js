@@ -1,3 +1,5 @@
+//const { text } = require("body-parser");
+
 const address_label = document.getElementById("address-label");
 
 
@@ -17,6 +19,8 @@ const popup = document.getElementById("modal-content");
 const popupHeader = document.getElementById("modal-header");
 const status = document.getElementById("status");
 const overlay = document.getElementById("overlay");
+const checkBox = document.getElementById("rulesCheckBox");
+const rolesLabel = document.getElementById("rulesLabel");
 
 
 function testRegX() {
@@ -92,6 +96,17 @@ function testRegX() {
     }else{
         plantsLabel.style.color = "black";
         plantsLabel.style.backgroundColor = "#A5A58D";
+    }
+    if(checkBox.checked){
+
+        rulesLabel.style.color = "black";
+        rulesLabel.style.backgroundColor = "#A5A58D";
+    }else{
+  
+        rulesLabel.style.color = "red";
+        rulesLabel.style.backgroundColor = "black";
+        
+        bolian = false;
     }
 
     if(bolian){
@@ -174,3 +189,7 @@ function hidepopup(){
 
 
 }
+
+
+
+ 
