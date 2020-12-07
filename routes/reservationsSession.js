@@ -53,8 +53,6 @@ router
             response.sendStatus(401);
         }
     })
-
-    // TODO
     
     .get('/logout', (request, response) => {
         request.session.destroy((err) => {
