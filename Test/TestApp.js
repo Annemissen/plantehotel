@@ -8,8 +8,6 @@ const fetch = require('node-fetch');
 exports.app = app;
 
 
-
-
 app.get('/api/customers', async (req, res) => {
     try {
         let customers = await fetch('/api/customers');

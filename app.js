@@ -14,11 +14,6 @@ app.use('/api/customers', require('./routes/planteHotel.js'));
 // Reservations - session
 app.use('/reservations', require('./routes/reservationsSession.js'));
 
-// Login page
-// app.get('/login', function(req, res){
-//     res.sendFile(__dirname+'/public/session/login.html')
-// });
-
 
 const port = process.env.PORT || config.localPort; // Heroku
 app.listen(port);
