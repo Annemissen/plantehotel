@@ -62,7 +62,7 @@ function testRegX() {
     }
 
     //vej og hus nr
-    if (!/^[\sa-zA-ZæøåÆØÅ]+\s[0-9]{1,4}$/.test(addressInputField.value)) {
+    if (!/^[-\sa-zA-ZæøåÆØÅ]+\s[0-9]{1,4}$/.test(addressInputField.value)) {
 
         addressInputField.style.backgroundColor = "red"
         bolian = false;
@@ -70,7 +70,7 @@ function testRegX() {
         addressInputField.style.backgroundColor = "#EDDCD2"
     }
 
-    //med mellemrum
+    //uden mellemrum
     if (!/^[0-9]{8}$/.test(numberInputField.value)) {
         numberInputField.style.backgroundColor = "red"
         bolian = false;
@@ -80,10 +80,10 @@ function testRegX() {
     }
 
     //email
-    if (!/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)) {
+    if (!/^[æøåÆØÅäöüÄÖÜ\w-\.]+@([æøåÆØÅäöüÄÖÜ\w-]+\.)+[\w-]{2,4}$/.test(emailInputField.value)) {
         emailInputField.style.backgroundColor = "red"
         bolian = false;
-    } else if (/^[\w-æøå\.]+@([\w-æøå]+\.)+[\w-æøå]{2,4}$/.test(emailInputField.value)) {
+    } else if (/^[æøåÆØÅäöüÄÖÜ\w-\.]+@([æøåÆØÅäöüÄÖÜ\w-]+\.)+[\w-]{2,4}$/.test(emailInputField.value)) {
         emailInputField.style.backgroundColor = "#EDDCD2";
 
     }
@@ -131,7 +131,7 @@ function testRegX() {
 }
 
 
-const createCustomer = async () => {
+const createCustomer = async() => {
 
     //testRegX();
 
@@ -179,4 +179,3 @@ function addEventListenersToBtns() {
 }
 
 addEventListenersToBtns();
-
