@@ -21,18 +21,6 @@ router
         }
     })
 
-    // .get("/test", async (req, res) => {
-    //     try {
-    //         // res.redirect(__dirname + '/../public/reservations.html')
-    //         res.sendfile(publicPath + '/reservations.html');
-    //         // res.sendfile(__dirname + '/../public/reservations.html');
-    //     }
-    //     catch(e){
-    //         console.error(e.name + ": " + e.messsage);
-    //         sendStatus(e, res)
-    //     }
-    // })
-
 
 function sendStatus(e, response) {
     console.error("Exception: " + e);

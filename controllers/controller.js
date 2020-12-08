@@ -14,8 +14,6 @@ const model = require('../models/models')
 const { firstname, lastname, address, postalcode, city, plantname, plantcount, pickup, mobile, email } = model;
 const fetch = require('node-fetch');
 const { databaseURI } = require('../config');
-const test = require('../public/regexVertify.js')
-
 
 
 mongoose.connect(databaseURI, { useNewUrlParser: true, useUnifiedTopology: true });
