@@ -80,11 +80,6 @@ const addPlant = async() => {
         amountOfPlantsInputField.style.backgroundColor = "red";
 
     }
-
-
-
-    // plantNameInputField.value = "";
-    // amountOfPlantsInputField.value = "";
 }
 
 
