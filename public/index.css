@@ -129,29 +129,29 @@ body {
 }
 
 
-/* Modal Header */
-.modal-header {
+/* popup Header */
+.popup-header {
     text-align: center;
     padding: 2px 16px;
     background-color: #5cb85c;
     color: #EDDCD2;
   }
   
-  /* Modal Body */
-  .modal-body {padding: 2px 16px;
+  /* popup Body */
+  .popup-body {padding: 2px 16px;
     text-align: center;
 }
   
-  /* Modal Footer */
-  .modal-footer {
+  /* popup Footer */
+  .popup-footer {
     text-align: center;
     padding: 2px 16px;
     background-color: #A5A58D;
     color: #EDDCD2;
   }
   
-  /* Modal Content */
-  #modal-content {
+  /* popup Content */
+  #popup-content {
     z-index: 3;
     display: none;
     position: fixed;
@@ -166,12 +166,7 @@ body {
     
     left: 0;
     right: 0;
-
-  
-    
   }
-  
-
 
 /* fejl css til validering af indputs  */
 

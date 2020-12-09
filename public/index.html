@@ -10,26 +10,28 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="index.js" defer></script>
     <script src="plantehotelClient.js" defer></script>
-    <script src="regexVertify.js" defer></script>
 </head>
-<h1>Booking af hotelplads </h1>
-
-<div class="modal-content" id="modal-content">
-    
-    <div class="modal-header" id="modal-header">
-      <button id="hidepopupBtn">X</button>
-      <h2>Order status</h2>
-    </div>
-    <div class="modal-body">
-      <p id="status">Godkendt</p>
-    </div>
-    <div class="modal-footer">
-     </div>
-  </div>
 
 <body>
+    <h1>Booking af hotelplads </h1>
+    
+    <div class="popup-content" id="popup-content">
+        
+        <div class="popup-header" id="popup-header">
+            <button id="hidepopupBtn">X</button>
+            <h2>Ordre status</h2>
+        </div>
+        <div class="popup-body">
+            <p id="status">Godkendt</p>
+        </div>
+        <div class="popup-footer">
+        </div>
+    </div>
+    
     <p>
-        Indlevering fnder sted, efter at vi har modtaget en <br> booking med jeres navn, adresse, mobil-nummer,<br> e-mail og antal planter samt ønskelig dato for<br> indlevering. Vi sender en bookingbekræftigelse i en<br> mail med en indleveringsadresse.<br>
+        Indlevering fnder sted, efter at vi har modtaget en <br> booking med jeres navn, adresse, mobil-nummer,<br>
+        e-mail og antal planter samt ønskelig dato for<br> indlevering. Vi sender en bookingbekræftigelse i en<br> mail
+        med en indleveringsadresse.<br>
     </p>
 
     <div id="name-div">
@@ -106,14 +108,17 @@
     </div>
     <div id="pickup">
         <label>afhentning ønskes<label>
-        <input id="pickupCheckBox" type="checkbox"></input>
+                <input id="pickupCheckBox" type="checkbox"></input>
     </div>
     <div>
-        <p>Indlevering kan ske alle lørdage mellem kl. 10 <br> og kl. 15 fra den 27 oktober og frem til om med<br> den 17 november. Vi opbevarer ikke kaktus,<br> sukkulenter, bougainvillea og enkelte andre<br> planter som kræver høj minimum-temperatur</p>
+        <p>Indlevering kan ske alle lørdage mellem kl. 10 <br> og kl. 15 fra den 27 oktober og frem til om med<br> den
+            17 november. Vi opbevarer ikke kaktus,<br> sukkulenter, bougainvillea og enkelte andre<br> planter som
+            kræver høj minimum-temperatur</p>
 
     </div>
     <div id="link-div">
-        <a href="https://drive.google.com/file/d/1NnPaj7J_1qORMPvzs4FLevwhb0xuf15F/view?usp=sharing/">regler og vilkår kan læses her</a>
+        <a href="https://drive.google.com/file/d/1NnPaj7J_1qORMPvzs4FLevwhb0xuf15F/view?usp=sharing/">regler og vilkår
+            kan læses her</a>
 
     </div>
     <div id="checkbox-div">
@@ -129,15 +134,9 @@
     </div>
 
 
-
+    <div id="overlay"></div>
 
 </body>
 
 
-
-  <div id="overlay"></div>
-
-
-
-  
 </html>

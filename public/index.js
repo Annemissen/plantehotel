@@ -1,9 +1,4 @@
-//const { text } = require("body-parser");
-
 const address_label = document.getElementById("address-label");
-
-
-
 const firstnameInputField = document.getElementById("name-input");
 const lastanameInputField = document.getElementById("lastname-input");
 const zipInputField = document.getElementById("zip-code-input");
@@ -15,8 +10,8 @@ const plantNameInputField = document.getElementById("plantName");
 const numberOfPlantsInputField = document.getElementById("numberOfPlants");
 const plantsSelector = document.getElementById("plants");
 const plantsLabel = document.getElementById("plantsLabel");
-const popup = document.getElementById("modal-content");
-const popupHeader = document.getElementById("modal-header");
+const popup = document.getElementById("popup-content");
+const popupHeader = document.getElementById("popup-header");
 const status = document.getElementById("status");
 const overlay = document.getElementById("overlay");
 const checkBox = document.getElementById("rulesCheckBox");
@@ -24,7 +19,6 @@ const rolesLabel = document.getElementById("rulesLabel");
 
 
 function testRegX() {
-
 
     let bolian = true;
     //fornavn
@@ -89,7 +83,6 @@ function testRegX() {
     }
 
     if (plantsSelector.innerText === "") {
-        console.log(plantsSelector.values);
         plantsLabel.style.color = "red";
         plantsLabel.style.backgroundColor = "black";
         bolian = false;
@@ -119,21 +112,12 @@ function testRegX() {
         overlay.style.display = "block";
         popupHeader.style.backgroundColor = "red";
         status.innerText = "Ikke godkedt"
-
-
-
     }
 
-    console.log('bolian value ' + bolian);
-
     return bolian;
-
 }
 
-
 const createCustomer = async() => {
-
-    //testRegX();
 
     if (testRegX() === true) {
         let firstname = document.getElementById("name-input").value;
@@ -143,7 +127,6 @@ const createCustomer = async() => {
         let postalcode = document.getElementById("zip-code-input").value;
         let mobile = document.getElementById("number-input").value;
         let email = document.getElementById("email-input").value;
-        plants
         let date = document.getElementById("datepicker").value
 
         let newcustomer = await fetch("/api/customers", {
