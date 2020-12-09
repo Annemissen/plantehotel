@@ -12,11 +12,7 @@ const informationSchema = new mongoose.Schema({
     email: String,
     plants: [String],
     pickup: Boolean,
-    date : Date,
-    
+    date : Date
 })
-
-
-//exports.information = mongoose.model("information", informationSchema);
 
 module.exports = mongoose.model("information", informationSchema);

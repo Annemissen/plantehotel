@@ -119,6 +119,7 @@ function testRegX() {
 
 const createCustomer = async() => {
 
+
     if (testRegX() === true) {
         let firstname = document.getElementById("name-input").value;
         let lastname = document.getElementById("lastname-input").value;
@@ -127,7 +128,8 @@ const createCustomer = async() => {
         let postalcode = document.getElementById("zip-code-input").value;
         let mobile = document.getElementById("number-input").value;
         let email = document.getElementById("email-input").value;
-        let date = document.getElementById("datepicker").value
+        let pickup = document.getElementById('pickupCheckBox').checked;
+        let date = document.getElementById("datepicker").value;
 
         let newcustomer = await fetch("/api/customers", {
             method: "POST",
@@ -141,7 +143,8 @@ const createCustomer = async() => {
                 mobile: mobile,
                 email: email,
                 plants: plants,
-                date: date,
+                pickup: pickup,
+                date: date
             }),
         });
     }
